@@ -1,0 +1,103 @@
+/* ||General Styling */
+* {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+
+  /* Liquid typography */
+  font-size: calc(1em + 1vw);
+  font-family: "Josefin Sans", sans-serif;
+}
+
+/* ||Header Styling */
+header {
+  position: relative;
+
+  color: rgb(244, 237, 221);
+  text-shadow: 1px 1px 1px rgb(255, 71, 71);
+  text-shadow: 2px 2px 1px rgb(255, 71, 71);
+  background: rgb(0, 173, 191);
+}
+
+.logo-name {
+  display: inline-block;
+  padding: 1rem 0.5rem;
+
+  font-size: 1.2rem;
+  font-style: italic;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.mobile-nav-glyph-wrapper {
+  position: absolute;
+  top: 0.8rem;
+  right: 1rem;
+
+  font-size: 1.2rem;
+}
+
+/* ||Mobile Navigation Overlay */
+.mobile-nav-overlay {
+  /* This height is everything in the viewport below the header */
+  height: calc(100vh - 1.2 * (1em + 1vw) - 2rem);
+  width: 100%;
+}
+
+.mobile-nav-overlay ul {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  align-items: center;
+
+  /* This height is everything in the viewport below the header */
+  height: inherit;
+  width: 100%;
+
+  margin: 0;
+  padding: 0;
+
+  list-style-type: none;
+
+  /* Fallback color */
+  background-color: rgb(0, 65, 72);
+  background-color: rgba(189, 248, 255, 0.95);
+
+  /* Timing of slide down overlay */
+  transition: 0.5s;
+}
+
+.mobile-nav-overlay li {
+  flex: 1;
+}
+
+.mobile-nav-overlay a:link,
+.mobile-nav-overlay a:visited {
+  /* This height divides the overlay height by six to center the links */
+  height: calc((100vh - 1.2 * (1em + 1vw) - 2rem) / 6);
+  line-height: calc((100vh - 1.2 * (1em + 1vw) - 2rem) / 6);
+
+  font-size: 1.2rem;
+  text-decoration: none;
+
+  color: black;
+  text-shadow: -1px -1px 1px rgb(244, 237, 221), 1px 1px 1px rgb(255, 71, 71);
+}
+
+/* There is no hover, focus, or active because this is a mobile nav */
+
+.social-flex {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.social-flex img {
+  flex: 1;
+
+  width: 30vw;
+  padding: 7.5vw;
+}
