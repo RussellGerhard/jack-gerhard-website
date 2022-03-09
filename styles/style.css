@@ -1,4 +1,4 @@
-/* ||General Styling */
+/* !!General Styling */
 * {
   box-sizing: inherit;
 }
@@ -8,41 +8,48 @@ html {
 
   /* Liquid typography */
   font-size: calc(1em + 1vw);
-  font-family: "Josefin Sans", sans-serif;
+  font-family: "Oxygen", sans-serif;
 }
 
-/* ||Header Styling */
+body {
+  color: #333;
+  background-color: rgb(244, 237, 221);
+}
+
+/* !!Header Styling */
 header {
   position: relative;
 
   color: rgb(244, 237, 221);
   text-shadow: 1px 1px 1px rgb(255, 71, 71);
   text-shadow: 2px 2px 1px rgb(255, 71, 71);
-  background: rgb(0, 173, 191);
+  background-color: rgb(130, 10, 20);
 }
 
 .logo-name {
   display: inline-block;
-  padding: 1rem 0.5rem;
+  margin: 1rem;
 
   font-size: 1.2rem;
   font-style: italic;
   font-weight: bold;
+  font-family: "Josefin Sans", sans-serif;
   letter-spacing: 2px;
 }
 
 .mobile-nav-glyph-wrapper {
   position: absolute;
-  top: 0.8rem;
+  top: 0.5rem;
   right: 1rem;
 
   font-size: 1.2rem;
 }
 
-/* ||Mobile Navigation Overlay */
+/* !!Mobile Navigation Overlay */
 .mobile-nav-overlay {
   /* This height is everything in the viewport below the header */
-  height: calc(100vh - 1.2 * (1em + 1vw) - 2rem);
+  font-family: "Josefin Sans", sans-serif;
+  height: calc(100vh - 3.2rem);
   width: 100%;
 }
 
@@ -53,7 +60,7 @@ header {
   align-items: center;
 
   /* This height is everything in the viewport below the header */
-  height: inherit;
+  height: 100%;
   width: 100%;
 
   margin: 0;
@@ -62,8 +69,7 @@ header {
   list-style-type: none;
 
   /* Fallback color */
-  background-color: rgb(0, 65, 72);
-  background-color: rgba(189, 248, 255, 0.95);
+  background-color: rgb(244, 237, 221);
 
   /* Timing of slide down overlay */
   transition: 0.5s;
@@ -76,14 +82,14 @@ header {
 .mobile-nav-overlay a:link,
 .mobile-nav-overlay a:visited {
   /* This height divides the overlay height by six to center the links */
-  height: calc((100vh - 1.2 * (1em + 1vw) - 2rem) / 6);
-  line-height: calc((100vh - 1.2 * (1em + 1vw) - 2rem) / 6);
+  height: calc((100vh - 3.2 * (1em + 1vw)) / 6);
+  line-height: calc((100vh - 3.2 * (1em + 1vw)) / 6);
 
   font-size: 1.2rem;
   text-decoration: none;
 
-  color: black;
-  text-shadow: -1px -1px 1px rgb(244, 237, 221), 1px 1px 1px rgb(255, 71, 71);
+  color: rgb(130, 10, 20);
+  text-shadow: 1px 1px 1px rgb(255, 71, 71);
 }
 
 /* There is no hover, focus, or active because this is a mobile nav */
@@ -98,6 +104,79 @@ header {
 .social-flex img {
   flex: 1;
 
-  width: 30vw;
-  padding: 7.5vw;
+  width: 10vw;
+  margin: 5vw;
+}
+
+/* !!Main Content Styling */
+.headshot-container {
+  width: 100%;
+}
+
+.headshot-container img {
+  display: block;
+
+  max-width: 100%;
+}
+
+.about-container {
+  margin: 1rem;
+}
+
+/* !!Footer Styling */
+footer {
+  padding: 0.5rem;
+
+  font-size: 0.5rem;
+  text-shadow: 1px 1px 1px rgb(255, 71, 71);
+
+  color: rgb(244, 237, 221);
+  background-color: rgb(130, 10, 20);
+}
+
+footer .social-container {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+
+  margin: 0.5rem 0;
+}
+
+footer .social-container img {
+  flex: 1;
+  max-width: 7.5vw;
+
+  margin: 0 0.1rem;
+}
+
+footer p {
+  margin: 0;
+
+  text-align: center;
+}
+
+/* !!Utility Classes */
+.hidden {
+  display: none;
+}
+
+.sticky {
+  position: sticky;
+  top: 0px;
+}
+
+/* Media Queries for Fluid Typography */
+@media screen and (min-width: 50em) {
+  html {
+    font-size: 2vw;
+  }
+}
+
+/* Media Queries for Responsive Layout */
+@media screen and (min-width: 31.25em) {
+  main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
 }
