@@ -3,11 +3,12 @@
   <head lang="en-US">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <!-- TODO: Add link w/ rel="icon" and 16x16px img -->
     <!-- TODO: Add OG cards and twitter cards -->
     <link rel="canonical" href="https://www.jackgerhard.com" />
     <link rel="stylesheet" href="styles/normalize.css" type="text/css" />
-    <link rel="stylesheet" href="styles/style.css" type="text/css" />
+    <link rel="stylesheet" href="styles/style2.css" type="text/css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -24,35 +25,54 @@
       content="Jack Gerhard is a New York based actor, singer, and musician."
     />
   </head>
-  <!-- X mark to close nav -->
-  <!-- &#10006; -->
+
   <body>
-    <header class="sticky">
-      <span class="logo-name">JACK GERHARD</span>
-      <div class="mobile-nav-glyph-wrapper">&#9776;</div>
+    <header>
+      <span class="inline-block margin-large logo-text">JACK GERHARD</span>
+      <input class="hidden side-menu" type="checkbox" id="side-menu" />
+      <label class="hamb margin-large" for="side-menu"
+        ><span class="hamb-line"></span
+      ></label>
+      <nav class="nav">
+        <ul class="nav-content">
+          <li><a class="mobile-nav-text" href="#">home</a></li>
+          <li>
+            <a class="mobile-nav-text" href="#">productions</a>
+          </li>
+          <li><a class="mobile-nav-text" href="#">music</a></li>
+          <li><a class="mobile-nav-text" href="#">resume</a></li>
+          <li><a class="mobile-nav-text" href="#">contact</a></li>
+          <li>
+            <div class="social-container">
+              <div class="social-item">
+                <img
+                  src="images/twitter-icon-200w.png"
+                  alt="Blue twitter icon"
+                />
+              </div>
+              <div class="social-item">
+                <img
+                  src="images/instagram-icon-200w.png"
+                  alt="Blue twitter icon"
+                />
+              </div>
+              <div class="social-item">
+                <img
+                  src="images/facebook-icon-200w.png"
+                  alt="Blue twitter icon"
+                />
+              </div>
+            </div>
+          </li>
+        </ul>
+      </nav>
     </header>
-    <nav class="mobile-nav-overlay hidden">
-      <ul>
-        <li><a href="#">home</a></li>
-        <li><a href="#">productions</a></li>
-        <li><a href="#">music</a></li>
-        <li><a href="#">resume</a></li>
-        <li><a href="#">contact</a></li>
-        <li>
-          <div class="social-flex">
-            <img src="images/twitter-icon-200w.png" alt="Blue twitter icon" />
-            <img src="images/twitter-icon-200w.png" alt="Blue twitter icon" />
-            <img src="images/twitter-icon-200w.png" alt="Blue twitter icon" />
-          </div>
-        </li>
-      </ul>
-    </nav>
     <main>
       <div class="headshot-container">
-        <img
-          src="images/jack_gerhard_headshot-500w.jpg"
-          alt="Headshot of actor Jack Gerhard from the chest up in a white henley"
-        />
+        <!-- <img -->
+        <!-- src="images/jack_gerhard_headshot-500w.jpg" -->
+        <!-- alt="Headshot of actor Jack Gerhard from the chest up in a white henley" -->
+        <!-- /> -->
       </div>
       <div class="about-container">
         <p>
@@ -69,9 +89,9 @@
     </main>
     <footer>
       <div class="social-container">
-        <img src="images/twitter-icon-200w.png" alt="Twitter icon" />
-        <img src="images/twitter-icon-200w.png" alt="Twitter icon" />
-        <img src="images/twitter-icon-200w.png" alt="Twitter icon" />
+        <!-- <img src="images/twitter-icon-200w.png" alt="Twitter icon" /> -->
+        <!-- <img src="images/twitter-icon-200w.png" alt="Twitter icon" /> -->
+        <!-- <img src="images/twitter-icon-200w.png" alt="Twitter icon" /> -->
       </div>
       <p>&copy; 2020 Jack Gerhard</p>
     </footer>

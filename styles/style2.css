@@ -1,8 +1,228 @@
+/* Design works at widths over 300px */
+
+/* !! CUSTOM VARS */
+:root {
+  --eggnog: rgb(244, 237, 221);
+  --gray: #333;
+  --maroon: rgb(130, 10, 20);
+  --tomato: rgb(255, 71, 71);
+}
+
 /* !! GENERAL STYLING  */
 * {
+  padding: 0;
+  margin: 0;
   box-sizing: inherit;
 }
 
 html {
   box-sizing: border-box;
+  font-family: "Oxygen", sans-serif;
+  font-size: 100%;
+}
+
+body {
+  color: var(--gray);
+  background-color: var(--eggnog);
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+/* !! HEADER COMPONENT */
+header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+
+  background-color: var(--maroon);
+  box-shadow: 1px 1px 5px 0px var(--gray);
+}
+
+/* !! MOBILE NAV COMPONENT */
+/*
+  I formatted and positioned this element, but the checkbox hack came from
+  https://blog.logrocket.com/create-responsive-mobile-menu-with-css-no-javascript/
+*/
+.nav {
+  height: 0%;
+  width: 100%;
+  position: fixed;
+
+  background-color: var(--maroon);
+  overflow: hidden;
+}
+
+/* Create a vertical flexbox for nav links */
+nav .nav-content {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 100%;
+}
+
+.nav .nav-content li {
+  flex: 1;
+}
+
+/* Style nav links */
+.nav .nav-content a {
+  height: 100%;
+  display: block;
+  text-align: center;
+  text-shadow: 1px 1px 2px var(--gray);
+  color: var(--eggnog);
+}
+
+.nav .nav-content a:hover {
+  background-color: var(--tomato);
+}
+
+.nav .nav-content a:active {
+  background-color: var(--tomato);
+}
+
+/* Create flexbox for socials in last nav element */
+.nav .nav-content .social-container {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  flex-flow: row nowrap;
+  margin: 0 auto;
+}
+
+/* Give equal space to each element, center img (inline elements) */
+.nav .nav-content .social-item {
+  flex: 1;
+  text-align: center;
+}
+
+.nav .nav-content .social-item img {
+  width: 50px;
+}
+
+/* Hamburger element */
+.hamb {
+  cursor: pointer;
+  float: right;
+  padding: 11px 0;
+}
+
+.hamb-line {
+  height: 2px;
+  width: 24px;
+  position: relative;
+  display: block;
+  transition: background-color 300ms ease-out;
+
+  background-color: var(--eggnog);
+}
+
+.hamb-line::before,
+.hamb-line::after {
+  height: 100%;
+  width: 100%;
+  display: block;
+  position: absolute;
+  transition: all 200ms ease-in;
+
+  background: var(--eggnog);
+  content: "";
+}
+
+.hamb-line::before {
+  top: 8px;
+}
+
+.hamb-line::after {
+  top: -8px;
+}
+
+/* Toggling */
+.side-menu:checked ~ .nav {
+  height: calc(100vh - 80px);
+}
+
+.side-menu:checked ~ .nav .nav-content {
+  /* Viewport minus header height */
+  height: 100%;
+}
+
+.side-menu:checked ~ .hamb .hamb-line {
+  background-color: transparent;
+}
+
+.side-menu:checked ~ .hamb .hamb-line::before {
+  transform: rotate(-45deg);
+  top: 0;
+}
+
+.side-menu:checked ~ .hamb .hamb-line::after {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+/* !! UTILITY CLASSES*/
+
+/* Display classes */
+.hidden {
+  display: none;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+/* Overflow classes */
+.no-scroll {
+  overflow: hidden;
+}
+
+/* 4pt grid margin classes */
+.margin-small {
+  margin: 4px;
+}
+
+.margin-medium {
+  margin: 8px;
+}
+
+.margin-large {
+  margin: 16px;
+}
+
+.margin-xlarge {
+  margin: 24px;
+}
+
+/* Text Classes */
+.logo-text {
+  color: var(--eggnog);
+  font: italic bold 1.5em "Josefin Sans", sans-serif;
+  letter-spacing: 2px;
+  text-shadow: 1px 1px 1px var(--tomato), 2px 2px 1px var(--tomato),
+    3px 3px 1px var(--tomato);
+
+  width: 200px;
+}
+
+.mobile-nav-text {
+  font-size: 24px;
+}
+
+/* !! MEDIA QUERIES */
+@media screen and (min-width: 40em) {
+  body {
+    font-size: 1.125rem;
+  }
+}
+
+@media screen and (min-width: 60em) {
+  body {
+    font-size: 1.25rem;
+  }
 }

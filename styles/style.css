@@ -5,21 +5,28 @@
 
 html {
   box-sizing: border-box;
-
-  /* Liquid typography */
-  font-size: calc(1em + 1vw);
-  font-family: "Oxygen", sans-serif;
+  font-size: 100%;
 }
 
 body {
   color: #333;
   background-color: rgb(244, 237, 221);
+  font-family: "Oxygen", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
 }
 
 /* !!Header Styling */
 header {
-  position: relative;
+  position: sticky;
 
+  box-shadow: 1px 1px 5px 0px grey;
   color: rgb(244, 237, 221);
   text-shadow: 1px 1px 1px rgb(255, 71, 71);
   text-shadow: 2px 2px 1px rgb(255, 71, 71);
@@ -30,11 +37,9 @@ header {
   display: inline-block;
   margin: 1rem;
 
-  font-size: 1.2rem;
-  font-style: italic;
-  font-weight: bold;
-  font-family: "Josefin Sans", sans-serif;
   letter-spacing: 2px;
+
+  font: italic bold 1.5em "Josefin Sans", sans-serif;
 }
 
 .mobile-nav-glyph-wrapper {
@@ -116,6 +121,8 @@ header {
 .headshot-container img {
   display: block;
 
+  margin: 1rem;
+
   max-width: 100%;
 }
 
@@ -166,17 +173,14 @@ footer p {
   top: 0px;
 }
 
-/* Media Queries for Fluid Typography */
-@media screen and (min-width: 50em) {
-  html {
-    font-size: 2vw;
+@media screen and (min-width: 35em) {
+  body {
+    font-size: 1.125rem;
   }
 }
 
-/* Media Queries for Responsive Layout */
-@media screen and (min-width: 31.25em) {
-  main {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+@media screen and (min-width: 50em) {
+  body {
+    font-size: 1.25rem;
   }
 }

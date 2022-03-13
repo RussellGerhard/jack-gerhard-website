@@ -1,0 +1,11 @@
+The body still scrolls when the mobile nav is open, need JS
+and a few utility classes for this.
+
+social images will need JS to change source
+
+TODO:
+
+social images
+RESPONSIVE NAV
+FOOTER
+H1, H2, H3 scale
