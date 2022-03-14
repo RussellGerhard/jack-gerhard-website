@@ -5,7 +5,6 @@ social images will need JS to change source
 
 TODO:
 
-social images
-RESPONSIVE NAV
+flexbox header? what setpoints for nav, socials???
 FOOTER
 H1, H2, H3 scale

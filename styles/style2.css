@@ -41,6 +41,11 @@ header {
   width: 100%;
 
   background-color: var(--maroon);
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.2)
+  );
   box-shadow: 1px 1px 5px 0px var(--gray);
 }
 
@@ -65,44 +70,49 @@ nav .nav-content {
   width: 100%;
 }
 
-.nav .nav-content li {
+.nav-content li {
   flex: 1;
 }
 
 /* Style nav links */
-.nav .nav-content a {
-  height: 100%;
+.nav-content a {
   display: block;
+  width: min-content;
+  margin: 0 auto;
+  padding: 10px;
   text-align: center;
-  text-shadow: 1px 1px 2px var(--gray);
+  text-shadow: 1px 1px 1px var(--tomato);
   color: var(--eggnog);
 }
 
-.nav .nav-content a:hover {
-  background-color: var(--tomato);
+.nav a:hover {
+  color: var(--tomato);
+  text-shadow: 1px 1px 1px var(--eggnog);
 }
 
-.nav .nav-content a:active {
-  background-color: var(--tomato);
+.nav a:active {
+  color: var(--eggnog);
+  text-shadow: 1px 1px 1px var(--tomato);
 }
 
-/* Create flexbox for socials in last nav element */
-.nav .nav-content .social-container {
-  height: 100%;
-  width: 50%;
+/* Create a container for socials in last nav element */
+.nav .social-container {
   display: flex;
   flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
   margin: 0 auto;
 }
 
-/* Give equal space to each element, center img (inline elements) */
-.nav .nav-content .social-item {
-  flex: 1;
-  text-align: center;
+.nav .social-container a {
+  height: 100%;
 }
 
-.nav .nav-content .social-item img {
+.nav img {
   width: 50px;
+  text-align: center;
+  margin: 0 10px;
 }
 
 /* Hamburger element */
@@ -149,7 +159,7 @@ nav .nav-content {
 
 .side-menu:checked ~ .nav .nav-content {
   /* Viewport minus header height */
-  height: 100%;
+  height: 83.33333%;
 }
 
 .side-menu:checked ~ .hamb .hamb-line {
@@ -207,7 +217,7 @@ nav .nav-content {
   text-shadow: 1px 1px 1px var(--tomato), 2px 2px 1px var(--tomato),
     3px 3px 1px var(--tomato);
 
-  width: 200px;
+  width: 160px;
 }
 
 .mobile-nav-text {
@@ -215,14 +225,63 @@ nav .nav-content {
 }
 
 /* !! MEDIA QUERIES */
-@media screen and (min-width: 40em) {
+@media (min-width: 40em) {
   body {
     font-size: 1.125rem;
   }
 }
 
-@media screen and (min-width: 60em) {
+@media (min-width: 60em) {
   body {
     font-size: 1.25rem;
+  }
+}
+
+@media (min-width: 50em) {
+  .logo-text {
+    margin-right: 0;
+  }
+
+  .nav {
+    position: static;
+    width: min(780px, 78%);
+    float: right;
+
+    background-color: transparent;
+  }
+
+  .nav .nav-content {
+    flex-flow: row nowrap;
+    justify-content: space-between;
+  }
+
+  .nav-content .mobile-nav-text {
+    margin-top: 0px;
+  }
+
+  .nav .social-container {
+    display: none;
+  }
+
+  .nav .social-container a:last-child img {
+    margin-right: 0px;
+  }
+
+  .hamb {
+    display: none;
+  }
+}
+
+@media (min-width: 62.5em) {
+  .nav {
+    margin-right: calc(100% - 1000px);
+  }
+}
+
+@media (min-width: 76.25em) {
+  .nav {
+    width: calc(780px + ((100% - 1220px) / 3));
+    margin-right: calc(220px + ((100% - 1220px) / 3));
+    margin-left: calc((100% - 1220px) / 3);
   }
 }
