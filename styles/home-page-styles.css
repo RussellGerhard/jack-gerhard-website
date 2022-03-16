@@ -1,0 +1,24 @@
+/* !! CUSTOM VARS */
+:root {
+  --eggnog: rgb(244, 237, 221);
+  --gray: #333;
+  --maroon: rgb(130, 10, 20);
+  --tomato: rgb(255, 71, 71);
+}
+
+main .headshot-container img {
+  display: block;
+  max-width: min(100%, 500px);
+  margin: 0 auto;
+}
+
+main .about-container {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+@media (min-width: 31.25em) {
+  main .headshot-container img {
+    margin-top: min(16px, calc((100vw - 500px) / 2));
+  }
+}

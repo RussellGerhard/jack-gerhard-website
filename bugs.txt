@@ -4,7 +4,5 @@ and a few utility classes for this.
 social images will need JS to change source
 
 TODO:
-
-flexbox header? what setpoints for nav, socials???
-FOOTER
-H1, H2, H3 scale
+mobile nav links drop down too much
+H1, H2, H3 scale and general text scaling
