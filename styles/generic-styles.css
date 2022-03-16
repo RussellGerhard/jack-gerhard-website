@@ -69,6 +69,7 @@ header {
   height: 0%;
   width: 100%;
   position: fixed;
+  top: 84px;
 
   background-color: var(--maroon);
   background-image: linear-gradient(
@@ -182,7 +183,7 @@ nav .nav-content {
 /* Toggling */
 .side-menu:checked ~ .nav {
   /* Viewport minus header height */
-  height: calc(100vh - 80px);
+  height: calc(100vh - 84px);
 }
 
 /* Give mobile nav links 5/6 of height */
@@ -210,7 +211,7 @@ nav .nav-content {
 
 /* Style footer to match header */
 footer {
-  height: 84px;
+  height: 86px;
   width: 100%;
   padding: 16px 0;
 
@@ -282,7 +283,7 @@ footer .content-wrapper .copy-text {
 /* Text Classes */
 .logo-text {
   color: var(--eggnog);
-  font: italic bold 1.5em "Josefin Sans", sans-serif;
+  font: italic bold 26px "Josefin Sans", sans-serif;
   letter-spacing: 2px;
   text-shadow: 1px 1px 1px var(--tomato), 2px 2px 1px var(--tomato),
     3px 3px 1px var(--tomato);
