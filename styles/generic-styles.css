@@ -27,10 +27,10 @@ body {
 }
 
 p {
-  margin: 16px 0;
+  margin: 16px 0px;
 
-  font-size: 1.25rem;
-  line-height: 1.5;
+  font-size: 1.125rem;
+  line-height: 1.4;
   letter-spacing: 0.5px;
 }
 
@@ -283,11 +283,12 @@ footer .content-wrapper .copy-text {
 /* Text Classes */
 .logo-text {
   color: var(--eggnog);
-  font: italic bold 26px "Josefin Sans", sans-serif;
+  /* font: italic bold 26px "Josefin Sans", sans-serif; */
   letter-spacing: 2px;
   text-shadow: 1px 1px 1px var(--tomato), 2px 2px 1px var(--tomato),
     3px 3px 1px var(--tomato);
 
+  height: 54px;
   width: 160px;
 }
 

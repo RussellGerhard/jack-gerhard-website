@@ -6,19 +6,29 @@
   --tomato: rgb(255, 71, 71);
 }
 
-main .headshot-container img {
+main .main-img-container img {
   display: block;
   max-width: min(100%, 500px);
   margin: 0 auto;
 }
 
-main .about-container {
+main .home-text-box {
   max-width: 500px;
-  margin: 0 auto;
+  margin: 16px auto;
 }
 
-@media (min-width: 31.25em) {
-  main .headshot-container img {
-    margin-top: min(16px, calc((100vw - 500px) / 2));
+main .home-text-box p {
+  margin: 8px 0;
+}
+
+@media (min-width: 62.5em) {
+  main {
+    column-count: 2;
+    width: 1000px;
+    margin: 0 auto 16px auto;
+  }
+
+  main .main-img-container {
+    max-width: 500px;
   }
 }
