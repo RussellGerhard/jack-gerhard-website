@@ -1,13 +1,42 @@
-logo flash of unstyled text (FOUT)
-
 The body still scrolls when the mobile nav is open, need JS
 and a few utility classes for this.
-
-social images will need JS to change source
+try setting a no scroll class with overflow: hidden to body when nav opens
 
 TODO:
-production page
-cite picture source:  https://www.news-press.com/story/entertainment/2019/08/29/musical-once-plays-fort-myers-broadway-palm-mann-hall-launches-u-s-tour/2032778001/
-get all media off of OG website
 
-H1, H2, H3 scale and general text scaling
+almost heaven instrumental | source: The REV Theatre Company
+almost heaven harmonica | source: The REV Theatre Company
+almost heaven romantic | source: The REV Theatre Company
+almost heaven jack solo guitar | source: The REV Theatre Company
+
+once guy and girl romantic | source: broadwayworld.com
+once guy and girl | source: broadwayworld.com
+once full stage | source: broadwayworld.com
+once busking | source: Winston-Salem Journal
+
+JCS jesus with disciples | website
+JCS jesus and disciple | website
+JCS jesus solo guitar | website
+
+Gentlemans multi-cast | website
+Gentlemans hit | tibbits.org
+Gentlemans hit reaction | tibbits.org
+
+Assassins | website
+
+oklahoma | website
+oklahoma | website
+oklahoma | website
+
+bonnie-clyde-dramatic from The Rider News
+bonnie-clyde when-i-drive | website
+bonnie-clyde romantic | website
+
+millbrook | website
+millbrook | website
+millbrook | website
+
+carousel shaders are still 400px height when screen is <400px wide
+add video gallery and make header at 1000 rather than 800
+social images will need JS to change source on hover
+get all media off of OG website

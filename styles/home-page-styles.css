@@ -6,6 +6,20 @@
   --tomato: rgb(255, 71, 71);
 }
 
+main .main-img-container figure {
+  margin: 0 auto 8px auto;
+}
+
+main .main-img-container figure figcaption {
+  margin: 0 auto;
+  max-width: 500px;
+  font-size: 0.6em;
+}
+
+main .main-img-container figure figcaption span {
+  font-style: italic;
+}
+
 main .main-img-container img {
   display: block;
   max-width: min(100%, 500px);

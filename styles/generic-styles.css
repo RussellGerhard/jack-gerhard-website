@@ -47,6 +47,7 @@ header {
   position: sticky;
   top: 0;
   width: 100%;
+  z-index: 2;
 
   /* Give header some nice texture and weight */
   background-color: var(--maroon);
@@ -225,7 +226,6 @@ main {
 }
 
 /* !! FOOTER COMPONENT */
-
 /* Style footer to match header */
 footer {
   height: 86px;
@@ -320,11 +320,6 @@ footer .content-wrapper .copy-text {
 @media (min-width: 40em) {
   body {
     font-size: 1.125rem;
-  }
-
-  .side-menu:checked ~ .nav {
-    /* Viewport minus header height in tablet */
-    height: calc(100vh - 86px);
   }
 }
 
