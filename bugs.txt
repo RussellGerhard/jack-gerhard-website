@@ -1,6 +1,8 @@
-The body still scrolls when the mobile nav is open, need JS
+1. The body still scrolls when the mobile nav is open, need JS
 and a few utility classes for this.
 try setting a no scroll class with overflow: hidden to body when nav opens
+
+2. Do I need touch for mobile? Click is firing on mobile in DevTools
 
 TODO:
 
@@ -36,7 +38,5 @@ millbrook | website
 millbrook | website
 millbrook | website
 
-carousel shaders are still 400px height when screen is <400px wide
 add video gallery and make header at 1000 rather than 800
 social images will need JS to change source on hover
-get all media off of OG website

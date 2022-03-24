@@ -46,8 +46,8 @@ function handleMoveToNextSlide() {
 for (let i = 0; i < numberOfCarousels; i++){
     prevButtonList[i].i = i;
     nextButtonList[i].i = i;
-    prevButtonList[i].addEventListener("touchstart", handleMoveToPrevSlide);
-    nextButtonList[i].addEventListener("touchstart", handleMoveToNextSlide);
+    // prevButtonList[i].addEventListener("touchstart", handleMoveToPrevSlide);
+    // nextButtonList[i].addEventListener("touchstart", handleMoveToNextSlide);
     prevButtonList[i].addEventListener("click", handleMoveToPrevSlide);
     nextButtonList[i].addEventListener("click", handleMoveToNextSlide);
 };

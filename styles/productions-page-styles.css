@@ -1,14 +1,18 @@
-/* !! CUSTOM VARS */
-:root {
-  --eggnog: rgb(244, 237, 221);
-  --gray: #333;
-  --maroon: rgb(130, 10, 20);
-  --tomato: rgb(255, 71, 71);
-}
-
 .show-content {
   max-width: 400px;
   margin: 0 auto;
+}
+
+h2 {
+  font-size: 1.2em;
+}
+
+h3 {
+  font-size: 1em;
+}
+
+.show-year {
+  float: right;
 }
 
 .show-content .show-and-role {
@@ -64,44 +68,43 @@
   justify-content: space-between;
 }
 
-.carousel .carousel-actions .control {
-  height: 50px;
+.carousel .carousel-actions div {
+  height: 70px;
   width: 50px;
   color: white;
   font-size: 40px;
 }
 
+.carousel .carousel-actions div:hover {
+  cursor: pointer;
+}
+
 .carousel .carousel-actions .left-arrow {
   text-align: left;
+  line-height: 60px;
   padding-left: 5px;
 }
 
 .carousel .carousel-actions .right-arrow {
   text-align: right;
+  line-height: 60px;
   padding-right: 5px;
 }
 
-.carousel .carousel-actions .shader {
-  cursor: pointer;
-  width: 70px;
-  height: 400px;
-  font-size: 20px;
-}
-
 @media (hover: hover) {
-  .carousel .carousel-actions .carousel-prev:hover {
-    background-image: linear-gradient(
-      to left,
-      rgba(0, 0, 0, 0),
-      rgba(0, 0, 0, 0.3)
-    );
-  }
-
   .carousel .carousel-actions .carousel-next:hover {
     background-image: linear-gradient(
       to right,
       rgba(0, 0, 0, 0),
-      rgba(0, 0, 0, 0.3)
+      rgba(0, 0, 0, 0.7)
+    );
+  }
+
+  .carousel .carousel-actions .carousel-prev:hover {
+    background-image: linear-gradient(
+      to left,
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 0.7)
     );
   }
 }
