@@ -30,9 +30,17 @@
     <meta property="og:site_name" content="Jack Gerhard" />
     <meta property="og:type" content="website" />
     <!-- Stylesheets-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <link rel="stylesheet" href="styles/normalize.css" type="text/css" />
     <link rel="stylesheet" href="styles/generic-styles.css" type="text/css" />
-    <link rel="stylesheet" href="styles/home-page-styles.css" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="styles/music-page-styles.css"
+      type="text/css"
+    />
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -45,6 +53,8 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap"
     />
+    <!-- Scripts -->
+    <script src="scripts/music.js" defer></script>
     <!-- Page title and description -->
     <title>Jack Gerhard</title>
     <meta
@@ -104,18 +114,55 @@
       </nav>
     </header>
     <main>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia
-        distinctio perferendis dolor temporibus, culpa blanditiis mollitia nemo
-        fugit at, quis error commodi impedit voluptate, corrupti officiis hic
-        tempora animi totam.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia
-        distinctio perferendis dolor temporibus, culpa blanditiis mollitia nemo
-        fugit at, quis error commodi impedit voluptate, corrupti officiis hic
-        tempora animi totam.
-      </p>
+      <div class="content-wrapper">
+        <div class="desktop-img-container"></div>
+        <div class="mobile-content-wrapper">
+          <div class="mobile-img-wrapper">
+            <img
+              src="images/content/music-page/music-on-stage-1237x1230.jpg"
+              alt="A young man seated with a guitar in front of a
+          microphone on stage at an indoor venue"
+            />
+          </div>
+          <div class="music-player">
+            <div class="music-player-head">
+              <div id="current-title-display">Roseanne</div>
+              <div class="album-display">Can't Slow Down Demo</div>
+              <audio id="audio" controls>
+                <source
+                  id="audio-source"
+                  src="audio/01 - Jack Gerhard - Roseanne.mp3"
+                />
+              </audio>
+            </div>
+            <ol>
+              <li>
+                <div class="song-display">
+                  <div class="name-play-box">
+                    <div class="play-box-number">1</div>
+                    <div class="play-box-name">Roseanne</div>
+                  </div>
+                  <div class="time">5:59</div>
+                </div>
+                <div class="song-display">
+                  <div class="name-play-box">
+                    <div class="play-box-number">2</div>
+                    <div class="play-box-name">One Last Time</div>
+                  </div>
+                  <div class="time">4:45</div>
+                </div>
+                <div class="song-display">
+                  <div class="name-play-box">
+                    <div class="play-box-number">3</div>
+                    <div class="play-box-name">Can't Slow Down</div>
+                  </div>
+                  <div class="time">4:01</div>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
     </main>
     <footer>
       <div class="content-wrapper">

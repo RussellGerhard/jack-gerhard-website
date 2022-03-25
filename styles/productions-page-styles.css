@@ -143,7 +143,7 @@ h3 {
   }
 }
 
-@media (min-width: 400px) {
+@media (min-width: 25em) {
   .show-content .show-and-role {
     border-top-left-radius: min(100vw - 400px, 15px);
     border-top-right-radius: min(100vw - 400px, 15px);
@@ -152,5 +152,9 @@ h3 {
   .carousel .carousel-item img {
     border-bottom-left-radius: min(100vw - 400px, 15px);
     border-bottom-right-radius: min(100vw - 400px, 15px);
+  }
+  .show-content {
+    box-shadow: 2px 2px 4px black;
+    border-radius: min(100vw - 400px, 15px);
   }
 }
