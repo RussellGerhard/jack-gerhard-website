@@ -338,8 +338,9 @@ footer .content-wrapper .copy-text {
 
   .nav {
     position: static;
-    width: min(780px, 78%);
     float: right;
+    width: min(780px, 78%);
+    margin-top: 16px;
 
     background-color: transparent;
     background-image: none;
@@ -347,7 +348,11 @@ footer .content-wrapper .copy-text {
 
   .nav .nav-content {
     flex-flow: row nowrap;
-    justify-content: space-between;
+    justify-content: space-evenly;
+  }
+
+  .nav-content li {
+    flex: none;
   }
 
   .nav-content .mobile-nav-text {

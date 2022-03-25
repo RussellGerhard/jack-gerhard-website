@@ -4,6 +4,7 @@ main .main-img-container figure {
 
 main .main-img-container figure figcaption {
   margin: 0 auto;
+  padding-left: 15px;
   max-width: 500px;
   font-size: 0.6em;
 }
@@ -27,11 +28,21 @@ main .home-text-box p {
   margin: 8px 0;
 }
 
+@media (min-width: 31.25em) {
+  main {
+    margin-top: min(16px, 0.5 * (100vw - 500px));
+  }
+
+  main .main-img-container img {
+    border-radius: min(15px, 100vw - 500px);
+  }
+}
+
 @media (min-width: 62.5em) {
   main {
     column-count: 2;
     width: 1000px;
-    margin: 0 auto 16px auto;
+    margin: 16px auto;
   }
 
   main .main-img-container {
