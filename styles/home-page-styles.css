@@ -4,7 +4,7 @@ main .main-img-container figure {
 
 main .main-img-container figure figcaption {
   margin: 0 auto;
-  padding-left: 15px;
+  padding-left: 16px;
   max-width: 500px;
   font-size: 0.6em;
 }
@@ -34,7 +34,7 @@ main .home-text-box p {
   }
 
   main .main-img-container img {
-    border-radius: min(15px, 100vw - 500px);
+    border-radius: min(var(--corner-radius), 100vw - 500px);
   }
 }
 

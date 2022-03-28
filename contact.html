@@ -32,7 +32,11 @@
     <!-- Stylesheets-->
     <link rel="stylesheet" href="styles/normalize.css" type="text/css" />
     <link rel="stylesheet" href="styles/generic-styles.css" type="text/css" />
-    <link rel="stylesheet" href="styles/home-page-styles.css" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="styles/contact-page-styles.css"
+      type="text/css"
+    />
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -72,7 +76,6 @@
             <a class="mobile-nav-text" href="videos.html">videos</a>
           </li>
           <li><a class="mobile-nav-text" href="music.html">music</a></li>
-          <li><a class="mobile-nav-text" href="resume.html">resume</a></li>
           <li><a class="mobile-nav-text" href="contact.html">contact</a></li>
         </ul>
         <div class="social-container">
@@ -107,18 +110,28 @@
       </nav>
     </header>
     <main>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia
-        distinctio perferendis dolor temporibus, culpa blanditiis mollitia nemo
-        fugit at, quis error commodi impedit voluptate, corrupti officiis hic
-        tempora animi totam.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia
-        distinctio perferendis dolor temporibus, culpa blanditiis mollitia nemo
-        fugit at, quis error commodi impedit voluptate, corrupti officiis hic
-        tempora animi totam.
-      </p>
+      <div class="contact-wrapper">
+        <h2>Agent Contact</h2>
+        <div class="agent-wrapper">
+          <img src="images/content/contact-page/hybrid-agency.png" />
+        </div>
+        <address>
+          <a href=""></a>
+          <a href=""></a>
+        </address>
+      </div>
+      <div class="contact-wrapper">
+        <form>
+          <h2>Direct Contact</h2>
+          <input type="text" id="name" name="name" placeholder="Name" />
+          <input type="email" id="email" name="email" placeholder="Email" />
+          <textarea
+            rows="5"
+            wrap="soft"
+            placeholder="Add a message!"
+          ></textarea>
+        </form>
+      </div>
     </main>
     <footer>
       <div class="content-wrapper">

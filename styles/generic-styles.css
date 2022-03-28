@@ -2,10 +2,11 @@
 
 /* !! CUSTOM VARS */
 :root {
-  --eggnog: rgb(244, 237, 221);
-  --gray: #333;
-  --maroon: rgb(130, 10, 20);
-  --tomato: rgb(255, 71, 71);
+  --color-primary-light: rgb(244, 237, 221);
+  --color-secondary-light: rgb(255, 71, 71);
+  --color-primary-dark: rgb(130, 10, 20);
+  --color-secondary-dark: #333;
+  --corner-radius: 16px;
 }
 
 /* !! GENERAL STYLING  */
@@ -22,8 +23,8 @@ html {
 }
 
 body {
-  color: var(--gray);
-  background-color: var(--eggnog);
+  color: var(--color-secondary-dark);
+  background-color: var(--color-primary-light);
 }
 
 p {
@@ -50,13 +51,13 @@ header {
   z-index: 2;
 
   /* Give header some nice texture and weight */
-  background-color: var(--maroon);
+  background-color: var(--color-primary-dark);
   background-image: linear-gradient(
     to bottom,
     rgba(0, 0, 0, 0),
     rgba(0, 0, 0, 0.2)
   );
-  box-shadow: 1px 1px 5px 0px var(--gray);
+  box-shadow: 1px 1px 5px 0px var(--color-secondary-dark);
 }
 
 /* !! MOBILE NAV COMPONENT */
@@ -70,10 +71,10 @@ header {
   height: 0%;
   width: 100%;
   position: fixed;
-  top: 84px;
+  top: 76px;
   z-index: 100;
 
-  background-color: var(--maroon);
+  background-color: var(--color-primary-dark);
   background-image: linear-gradient(
     to bottom,
     rgba(0, 0, 0, 0.2) calc(100% - 84px),
@@ -102,20 +103,20 @@ nav .nav-content {
   margin: 0 auto;
   padding: 10px;
   text-align: center;
-  text-shadow: 1px 1px 1px var(--tomato);
-  color: var(--eggnog);
+  text-shadow: 1px 1px 1px var(--color-secondary-light);
+  color: var(--color-primary-light);
 }
 
 /* Reverse color palette on hover */
 .nav a:hover {
-  color: var(--tomato);
-  text-shadow: 1px 1px 1px var(--eggnog);
+  color: var(--color-secondary-light);
+  text-shadow: 1px 1px 1px var(--color-primary-light);
 }
 
 /* Restore original color palette on activate */
 .nav a:active {
-  color: var(--eggnog);
-  text-shadow: 1px 1px 1px var(--tomato);
+  color: var(--color-primary-light);
+  text-shadow: 1px 1px 1px var(--color-secondary-light);
 }
 
 /* Create a container for socials in last nav element */
@@ -159,7 +160,7 @@ nav .nav-content {
   display: block;
   transition: background-color 300ms ease-out;
 
-  background-color: var(--eggnog);
+  background-color: var(--color-primary-light);
 }
 
 /* Duplicate middle line above and below, style transition to mobile nav */
@@ -171,7 +172,7 @@ nav .nav-content {
   position: absolute;
   transition: all 200ms ease-in;
 
-  background: var(--eggnog);
+  background: var(--color-primary-light);
   content: "";
 }
 
@@ -187,7 +188,7 @@ nav .nav-content {
 /* Toggling */
 .side-menu:checked ~ .nav {
   /* Viewport minus header height */
-  height: calc(100vh - 84px);
+  height: calc(100vh - 76px);
 }
 
 /* Give mobile nav links 5/6 of height */
@@ -213,7 +214,7 @@ nav .nav-content {
 
 /* !! MAIN TRANSITION */
 main {
-  animation: fadein 0.8s;
+  animation: fadein 1.25s;
 }
 
 @keyframes fadein {
@@ -228,11 +229,11 @@ main {
 /* !! FOOTER COMPONENT */
 /* Style footer to match header */
 footer {
-  height: 86px;
+  height: 70px;
   width: 100%;
-  padding: 16px 0;
+  padding: 8px 0;
 
-  box-shadow: -1px -1px 5px 0px var(--gray);
+  box-shadow: -1px -1px 5px 0px var(--color-secondary-dark);
 
   background-color: rgb(130, 10, 20);
   background-image: linear-gradient(
@@ -299,14 +300,15 @@ footer .content-wrapper .copy-text {
 
 /* Text Classes */
 .logo-text {
-  color: var(--eggnog);
-  font: italic bold 26px "Josefin Sans", sans-serif;
+  color: var(--color-primary-light);
+  font: italic bold 22px "Josefin Sans", sans-serif;
   letter-spacing: 2px;
   line-height: 0.97;
-  text-shadow: 1px 1px 1px var(--tomato), 2px 2px 1px var(--tomato),
-    3px 3px 1px var(--tomato);
+  text-shadow: 1px 1px 1px var(--color-secondary-light),
+    2px 2px 1px var(--color-secondary-light),
+    3px 3px 1px var(--color-secondary-light);
 
-  height: 54px;
+  height: 44px;
   width: 160px;
 }
 
@@ -340,7 +342,7 @@ footer .content-wrapper .copy-text {
     position: static;
     float: right;
     width: min(780px, 78%);
-    margin-top: 16px;
+    margin-top: 12px;
 
     background-color: transparent;
     background-image: none;
@@ -356,6 +358,7 @@ footer .content-wrapper .copy-text {
   }
 
   .nav-content .mobile-nav-text {
+    font-family: "Josefin Sans", sans-serif;
     margin-top: 0px;
   }
 
