@@ -17,12 +17,12 @@
     />
     <meta
       name="twitter:image"
-      content="images/content/jack-gerhard-headshot-500w-338h.jpg"
+      content="images/content/open-graph/jack-gerhard-headshot-500w-338h.jpg"
     />
     <!-- Open Graph protocol -->
     <meta
       property="og:image"
-      content="images/content/jack-gerhard-headshot-500w-338h.jpg"
+      content="images/content/open-graph/jack-gerhard-headshot-500w-338h.jpg"
     />
     <meta property="og:image:width" content="500" />
     <meta property="og:image:height" content="338" />
@@ -64,129 +64,178 @@
   </head>
 
   <body>
-    <header>
-      <span id="logo" class="inline-block margin-large logo-text"
-        >JACK GERHARD</span
-      >
-      <input class="hidden side-menu" type="checkbox" id="side-menu" />
-      <label class="hamb margin-large" for="side-menu"
-        ><span class="hamb-line"></span
-      ></label>
-      <nav class="nav">
-        <ul class="nav-content">
-          <li><a class="mobile-nav-text" href="index.html">home</a></li>
-          <li>
-            <a class="mobile-nav-text" href="productions.html">productions</a>
-          </li>
-          <li>
-            <a class="mobile-nav-text" href="videos.html">videos</a>
-          </li>
-          <li><a class="mobile-nav-text" href="music.html">music</a></li>
-          <li><a class="mobile-nav-text" href="contact.html">contact</a></li>
-        </ul>
-        <div class="social-container">
-          <a
-            class="mobile-nav-social-link"
-            target="_blank"
-            href="https://www.twitter.com/GerhardOrGoHome/"
-          >
-            <img src="images/icons/twitter-icon-200w.png" alt="Twitter icon" />
-          </a>
-          <a
-            class="mobile-nav-social-link"
-            target="_blank"
-            href="https://www.instagram.com/gerhardorgohome/"
-          >
-            <img
-              src="images/icons/instagram-icon-200w.png"
-              alt="Instagram icon"
-            />
-          </a>
-          <a
-            class="mobile-nav-social-link"
-            target="_blank"
-            href="https://www.facebook.com/jack.gerhard.3"
-          >
-            <img
-              src="images/icons/facebook-icon-200w.png"
-              alt="Facebook icon"
-            />
-          </a>
-        </div>
-      </nav>
-    </header>
-    <main>
-      <div class="content-wrapper">
-        <div class="desktop-img-container"></div>
-        <div class="mobile-content-wrapper">
-          <div class="mobile-img-wrapper">
-            <img
-              src="images/content/music-page/music-on-stage-1237x1230.jpg"
-              alt="A young man seated with a guitar in front of a
-          microphone on stage at an indoor venue"
-            />
+    <div class="page-container">
+      <header>
+        <span id="logo" class="inline-block margin-large logo-text"
+          >JACK GERHARD</span
+        >
+        <input class="hidden side-menu" type="checkbox" id="side-menu" />
+        <label class="hamb margin-large" for="side-menu"
+          ><span class="hamb-line"></span
+        ></label>
+        <nav class="nav">
+          <ul class="nav-content">
+            <li>
+              <a class="mobile-nav-text display-text" href="index.html">home</a>
+            </li>
+            <li>
+              <a class="mobile-nav-text display-text" href="productions.html"
+                >productions</a
+              >
+            </li>
+            <li>
+              <a class="mobile-nav-text display-text" href="videos.html"
+                >videos</a
+              >
+            </li>
+            <li>
+              <a class="mobile-nav-text display-text" href="music.html"
+                >music</a
+              >
+            </li>
+            <li>
+              <a class="mobile-nav-text display-text" href="contact.html"
+                >contact</a
+              >
+            </li>
+          </ul>
+          <div class="social-container">
+            <a
+              class="mobile-nav-social-link"
+              target="_blank"
+              href="https://www.twitter.com/GerhardOrGoHome/"
+            >
+              <img
+                class="margin-medium"
+                src="images/icons/twitter-icon-200w.png"
+                alt="Twitter icon"
+              />
+            </a>
+            <a
+              class="mobile-nav-social-link"
+              target="_blank"
+              href="https://www.instagram.com/gerhardorgohome/"
+            >
+              <img
+                class="margin-medium"
+                src="images/icons/instagram-icon-200w.png"
+                alt="Instagram icon"
+              />
+            </a>
+            <a
+              class="mobile-nav-social-link"
+              target="_blank"
+              href="https://www.facebook.com/jack.gerhard.3"
+            >
+              <img
+                class="margin-medium"
+                src="images/icons/facebook-icon-200w.png"
+                alt="Facebook icon"
+              />
+            </a>
           </div>
-          <div class="music-player">
-            <div class="music-player-head">
-              <div id="current-title-display">Roseanne</div>
-              <div class="album-display">Can't Slow Down Demo</div>
-              <audio id="audio" controls>
-                <source
-                  id="audio-source"
-                  src="audio/01 - Jack Gerhard - Roseanne.mp3"
+        </nav>
+      </header>
+      <main>
+        <div class="content-wrapper">
+          <div class="desktop-flex-col-wrapper">
+            <div class="mobile-content-wrapper">
+              <div class="mobile-img-wrapper">
+                <img
+                  src="images/content/music-page/music-on-stage-1237x1230.jpg"
+                  alt="A young man seated with a guitar in front of a
+                microphone on stage at an indoor venue"
                 />
-              </audio>
+              </div>
+              <div class="music-player">
+                <div class="music-player-head padding-large">
+                  <h2 class="display-text margin-medium album-display">
+                    Can't Slow Down
+                  </h2>
+                  <h3
+                    id="current-title-display"
+                    class="display-text margin-medium"
+                  >
+                    Roseanne
+                  </h3>
+                  <audio id="audio" controls>
+                    <source
+                      id="audio-source"
+                      src="audio/01 - Jack Gerhard - Roseanne.mp3"
+                    />
+                  </audio>
+                </div>
+                <ol>
+                  <li>
+                    <div class="song-display">
+                      <div class="name-play-box">
+                        <div class="play-box-number display-text">1</div>
+                        <div class="play-box-name display-text">Roseanne</div>
+                      </div>
+                      <div class="time display-text">5:59</div>
+                    </div>
+                    <div class="song-display">
+                      <div class="name-play-box">
+                        <div class="play-box-number display-text">2</div>
+                        <div class="play-box-name display-text">
+                          One Last Time
+                        </div>
+                      </div>
+                      <div class="time display-text">4:45</div>
+                    </div>
+                    <div class="song-display">
+                      <div class="name-play-box">
+                        <div class="play-box-number display-text">3</div>
+                        <div class="play-box-name display-text">
+                          Can't Slow Down
+                        </div>
+                      </div>
+                      <div class="time display-text">4:01</div>
+                    </div>
+                  </li>
+                </ol>
+              </div>
             </div>
-            <ol>
-              <li>
-                <div class="song-display">
-                  <div class="name-play-box">
-                    <div class="play-box-number">1</div>
-                    <div class="play-box-name">Roseanne</div>
-                  </div>
-                  <div class="time">5:59</div>
-                </div>
-                <div class="song-display">
-                  <div class="name-play-box">
-                    <div class="play-box-number">2</div>
-                    <div class="play-box-name">One Last Time</div>
-                  </div>
-                  <div class="time">4:45</div>
-                </div>
-                <div class="song-display">
-                  <div class="name-play-box">
-                    <div class="play-box-number">3</div>
-                    <div class="play-box-name">Can't Slow Down</div>
-                  </div>
-                  <div class="time">4:01</div>
-                </div>
-              </li>
-            </ol>
+            <div class="desktop-img-container">
+              <img
+                src="images/content/music-page/almost-heaven-jack-harmonica-solo.png"
+                alt="Jack Gerhard in jean jacket playing harmonica"
+              />
+            </div>
           </div>
         </div>
-      </div>
-    </main>
-    <footer>
-      <div class="content-wrapper">
-        <div class="social-container">
-          <a target="_blank" href="https://www.twitter.com/GerhardOrGoHome/">
-            <img src="images/icons/twitter-icon-200w.png" alt="Twitter icon" />
-          </a>
-          <a target="_blank" href="https://www.instagram.com/gerhardorgohome/">
-            <img
-              src="images/icons/instagram-icon-200w.png"
-              alt="Instagram icon"
-            />
-          </a>
-          <a target="_blank" href="https://www.facebook.com/jack.gerhard.3/">
-            <img
-              src="images/icons/facebook-icon-200w.png"
-              alt="Facebook icon"
-            />
-          </a>
+      </main>
+      <footer>
+        <div class="content-wrapper">
+          <div class="social-container">
+            <a target="_blank" href="https://www.twitter.com/GerhardOrGoHome/">
+              <img
+                class="margin-small"
+                src="images/icons/twitter-icon-200w.png"
+                alt="Twitter icon"
+              />
+            </a>
+            <a
+              target="_blank"
+              href="https://www.instagram.com/gerhardorgohome/"
+            >
+              <img
+                class="margin-small"
+                src="images/icons/instagram-icon-200w.png"
+                alt="Instagram icon"
+              />
+            </a>
+            <a target="_blank" href="https://www.facebook.com/jack.gerhard.3/">
+              <img
+                class="margin-small"
+                src="images/icons/facebook-icon-200w.png"
+                alt="Facebook icon"
+              />
+            </a>
+          </div>
+          <div class="footnote copyright">&copy; 2020 Jack Gerhard</div>
         </div>
-        <div class="copy-text">&copy; 2020 Jack Gerhard</div>
-      </div>
-    </footer>
+      </footer>
+    </div>
   </body>
 </html>

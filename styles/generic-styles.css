@@ -23,16 +23,15 @@ html {
 }
 
 body {
+  position: relative;
+  min-height: 100vh;
   color: var(--color-secondary-dark);
   background-color: var(--color-primary-light);
 }
 
-p {
-  margin: 16px 0px;
-
-  font-size: 1.125rem;
-  line-height: 1.4;
-  letter-spacing: 0.5px;
+.page-container {
+  /* Leave room for footer */
+  padding-bottom: 70px;
 }
 
 a {
@@ -41,6 +40,80 @@ a {
 
 ul {
   list-style-type: none;
+}
+
+/* Major Second Type Scale */
+.citation {
+  font-size: calc(1em / 1.125 / 1.125 / 1.125);
+}
+
+.footnote {
+  font-size: calc(1em / 1.125 / 1.125 / 1.125 / 1.125);
+}
+
+p {
+  font-size: 1.125em;
+  line-height: 1.4;
+  letter-spacing: normal;
+  max-width: 31.25em;
+}
+
+h4 {
+  font-size: calc(1.125 * 1.125 * 1em);
+}
+
+h3 {
+  font-size: calc(1.125 * 1.125 * 1.125 * 1em);
+}
+
+h2 {
+  font-size: calc(1.125 * 1.125 * 1.125 * 1.125 * 1em);
+}
+
+/* Text Classes */
+.mobile-nav-text {
+  font-size: calc(1.125 * 1.125 * 1em);
+}
+
+.logo-text {
+  color: var(--color-primary-light);
+  font: italic bold 24px "Josefin Sans", sans-serif;
+  letter-spacing: 2px;
+  line-height: 0.97;
+  text-shadow: 1px 1px 1px var(--color-secondary-light),
+    2px 2px 1px var(--color-secondary-light),
+    3px 3px 1px var(--color-secondary-light);
+  height: 44px;
+  width: 160px;
+}
+
+.display-text {
+  font-family: "Josefin Sans", sans-serif;
+}
+
+/* 4pt grid margin classes */
+.margin-small {
+  margin: 4px;
+}
+
+.margin-medium {
+  margin: 8px;
+}
+
+.margin-large {
+  margin: 16px;
+}
+
+.margin-bottom-large {
+  margin-bottom: 16px;
+}
+
+.margin-xlarge {
+  margin: 24px;
+}
+
+.padding-large {
+  padding: 16px;
 }
 
 /* !! HEADER COMPONENT */
@@ -57,7 +130,7 @@ header {
     rgba(0, 0, 0, 0),
     rgba(0, 0, 0, 0.2)
   );
-  box-shadow: 1px 1px 5px 0px var(--color-secondary-dark);
+  box-shadow: 1px 1px 4px 0px var(--color-secondary-dark);
 }
 
 /* !! MOBILE NAV COMPONENT */
@@ -72,7 +145,6 @@ header {
   width: 100%;
   position: fixed;
   top: 76px;
-  z-index: 100;
 
   background-color: var(--color-primary-dark);
   background-image: linear-gradient(
@@ -123,7 +195,7 @@ nav .nav-content {
 .nav .social-container {
   display: flex;
   flex-flow: row nowrap;
-  align-items: center;
+  align-items: start;
   justify-content: center;
   height: 100%;
   margin: 0 auto;
@@ -131,7 +203,7 @@ nav .nav-content {
 
 /* Give the social links some height */
 .nav .social-container a {
-  height: 100%;
+  height: min-content;
 }
 
 /*
@@ -139,10 +211,9 @@ nav .nav-content {
   high as 3:1 so it's important that these icons
   be at least 150x150
 */
-.nav img {
+.nav .social-container img {
   width: 32px;
   text-align: center;
-  margin: 0 8px;
 }
 
 /* Style hamburger element */
@@ -229,11 +300,13 @@ main {
 /* !! FOOTER COMPONENT */
 /* Style footer to match header */
 footer {
+  position: absolute;
+  bottom: 0;
   height: 70px;
   width: 100%;
   padding: 8px 0;
 
-  box-shadow: -1px -1px 5px 0px var(--color-secondary-dark);
+  box-shadow: -1px -1px 4px 0px var(--color-secondary-dark);
 
   background-color: rgb(130, 10, 20);
   background-image: linear-gradient(
@@ -248,7 +321,6 @@ footer .social-container {
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
-  margin-bottom: 4px;
 }
 
 footer .social-container a {
@@ -259,11 +331,9 @@ footer .social-container a {
 footer .social-container img {
   display: block;
   width: 32px;
-  margin: 0px 4px;
 }
 
-footer .content-wrapper .copy-text {
-  font-size: 14px;
+footer .content-wrapper .copyright {
   text-align: center;
   color: black;
 }
@@ -277,58 +347,12 @@ footer .content-wrapper .copy-text {
   display: none;
 }
 
-.hidden {
-  display: none;
-}
-
-/* 4pt grid margin classes */
-.margin-small {
-  margin: 4px;
-}
-
-.margin-medium {
-  margin: 8px;
-}
-
-.margin-large {
-  margin: 16px;
-}
-
-.margin-xlarge {
-  margin: 24px;
-}
-
-/* Text Classes */
-.logo-text {
-  color: var(--color-primary-light);
-  font: italic bold 22px "Josefin Sans", sans-serif;
-  letter-spacing: 2px;
-  line-height: 0.97;
-  text-shadow: 1px 1px 1px var(--color-secondary-light),
-    2px 2px 1px var(--color-secondary-light),
-    3px 3px 1px var(--color-secondary-light);
-
-  height: 44px;
-  width: 160px;
-}
-
-.mobile-nav-text {
-  font-size: 24px;
-}
-
 /* !! MEDIA QUERIES */
 
 /* Tablet layout */
 @media (min-width: 40em) {
   body {
     font-size: 1.125rem;
-  }
-}
-
-/* Desktop layout */
-@media (min-width: 60em) {
-  body {
-    font-size: 1.25rem;
   }
 }
 
@@ -342,7 +366,7 @@ footer .content-wrapper .copy-text {
     position: static;
     float: right;
     width: min(780px, 78%);
-    margin-top: 12px;
+    margin: 16px 0;
 
     background-color: transparent;
     background-image: none;
@@ -357,11 +381,6 @@ footer .content-wrapper .copy-text {
     flex: none;
   }
 
-  .nav-content .mobile-nav-text {
-    font-family: "Josefin Sans", sans-serif;
-    margin-top: 0px;
-  }
-
   .nav .social-container {
     display: none;
   }
@@ -372,6 +391,17 @@ footer .content-wrapper .copy-text {
 
   .hamb {
     display: none;
+  }
+}
+
+/* Desktop layout */
+@media (min-width: 60em) {
+  body {
+    font-size: calc(1.125 * 1.125rem);
+  }
+
+  .nav {
+    margin: 15px 0;
   }
 }
 

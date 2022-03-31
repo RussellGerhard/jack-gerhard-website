@@ -1,26 +1,11 @@
-.contact-wrapper {
-  font-family: "Josefin Sans", sans-serif;
-  width: 300px;
-  margin: 24px auto;
-  padding: 12px;
-  border: 3px solid var(--color-primary-dark);
-  border-radius: 16px;
-  box-shadow: 2px 2px 4px black;
-}
-
-.agent-wrapper img {
-  max-width: 100%;
-}
-
 h2 {
   text-align: center;
-  margin: 12px auto;
   color: var(--color-primary-dark);
-  /* text-shadow: 1px 1px 1px var(--color-primary-light), 2px 2px 4px black; */
 }
 
 input {
   display: block;
+  width: 100%;
   margin: 8px auto;
   padding: 8px;
   border: 2px solid var(--color-secondary-dark);
@@ -29,7 +14,110 @@ input {
 
 textarea {
   display: block;
-  margin: 8px auto 16px auto;
+  margin: 8px auto;
   padding: 8px;
-  width: 13.4375em;
+  width: 100%;
+  border: 2px solid var(--color-secondary-dark);
+  border-radius: 8px;
+  resize: none;
+}
+
+form button {
+  width: 100%;
+  padding-top: 5px;
+  border: 2px solid var(--color-secondary-dark);
+  border-radius: 8px;
+  background-color: #ccc;
+  color: var(--color-primary-dark);
+}
+
+.contact-wrapper {
+  max-width: 450px;
+  padding: 16px;
+  margin: 16px;
+}
+
+.agent-wrapper {
+  padding: 21px 0;
+}
+
+.agent-wrapper img {
+  max-width: 100%;
+  display: block;
+}
+
+address {
+  text-align: center;
+  font-size: 1.25em;
+  line-height: 1.42;
+}
+
+address a {
+  color: var(--color-primary-dark);
+}
+
+.desktop-flex-col-wrapper-images {
+  display: none;
+}
+
+.desktop-flex-col-wrapper-forms {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.img-wrap:first-child {
+  margin-bottom: 32px;
+}
+
+.img-wrap img {
+  display: block;
+  border-radius: var(--corner-radius);
+}
+
+@media (min-width: 30em) {
+  .contact-wrapper {
+    border: 3px solid var(--color-primary-dark);
+    border-radius: var(--corner-radius);
+    box-shadow: 2px 2px 4px black;
+  }
+
+  .desktop-flex-col-wrapper-forms {
+    width: 445px;
+  }
+}
+
+@media (min-width: 60em) {
+  #word-break {
+    display: none;
+  }
+
+  .contact-wrapper {
+    margin: 0;
+  }
+
+  .contact-wrapper:first-child {
+    margin-bottom: 32px;
+  }
+
+  .desktop-flex-row-wrapper {
+    margin: 32px auto;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+  }
+
+  .desktop-flex-col-wrapper-images {
+    display: flex;
+    flex-flow: column nowrap;
+  }
+
+  .desktop-flex-col-wrapper-images .img-wrap img {
+    box-shadow: 2px 2px 4px black;
+  }
+
+  .desktop-flex-col-wrapper-forms {
+    display: flex;
+    flex-flow: column nowrap;
+    margin: 0 0 0 32px;
+  }
 }

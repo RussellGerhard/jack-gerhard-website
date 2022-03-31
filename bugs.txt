@@ -3,9 +3,8 @@ and a few utility classes for this.
 try setting a no scroll class with overflow: hidden to body when nav opens
 
 2. Do I need touch for mobile? Click is firing on mobile in DevTools
-3. add video gallery and make header at 1000 rather than 800
-4. social images will need JS to change source on hover
-5. home desktop layout is messed up
+3. social images will need JS to change source on hover
+4. home desktop layout is messed up
 
 TODO:
 

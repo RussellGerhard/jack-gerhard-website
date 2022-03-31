@@ -17,12 +17,12 @@
     />
     <meta
       name="twitter:image"
-      content="images/content/jack-gerhard-headshot-500w-338h.jpg"
+      content="images/content/open-graph/jack-gerhard-headshot-500w-338h.jpg"
     />
     <!-- Open Graph protocol -->
     <meta
       property="og:image"
-      content="images/content/jack-gerhard-headshot-500w-338h.jpg"
+      content="images/content/open-graph/jack-gerhard-headshot-500w-338h.jpg"
     />
     <meta property="og:image:width" content="500" />
     <meta property="og:image:height" content="338" />
@@ -58,102 +58,163 @@
   </head>
 
   <body>
-    <header>
-      <span id="logo" class="inline-block margin-large logo-text"
-        >JACK GERHARD</span
-      >
-      <input class="hidden side-menu" type="checkbox" id="side-menu" />
-      <label class="hamb margin-large" for="side-menu"
-        ><span class="hamb-line"></span
-      ></label>
-      <nav class="nav">
-        <ul class="nav-content">
-          <li><a class="mobile-nav-text" href="index.html">home</a></li>
-          <li>
-            <a class="mobile-nav-text" href="productions.html">productions</a>
-          </li>
-          <li>
-            <a class="mobile-nav-text" href="videos.html">videos</a>
-          </li>
-          <li><a class="mobile-nav-text" href="music.html">music</a></li>
-          <li><a class="mobile-nav-text" href="contact.html">contact</a></li>
-        </ul>
-        <div class="social-container">
-          <a
-            class="mobile-nav-social-link"
-            target="_blank"
-            href="https://www.twitter.com/GerhardOrGoHome/"
-          >
-            <img src="images/icons/twitter-icon-200w.png" alt="Twitter icon" />
-          </a>
-          <a
-            class="mobile-nav-social-link"
-            target="_blank"
-            href="https://www.instagram.com/gerhardorgohome/"
-          >
-            <img
-              src="images/icons/instagram-icon-200w.png"
-              alt="Instagram icon"
-            />
-          </a>
-          <a
-            class="mobile-nav-social-link"
-            target="_blank"
-            href="https://www.facebook.com/jack.gerhard.3"
-          >
-            <img
-              src="images/icons/facebook-icon-200w.png"
-              alt="Facebook icon"
-            />
-          </a>
+    <div class="page-container">
+      <header>
+        <span id="logo" class="inline-block margin-large logo-text"
+          >JACK GERHARD</span
+        >
+        <input class="hidden side-menu" type="checkbox" id="side-menu" />
+        <label class="hamb margin-large" for="side-menu"
+          ><span class="hamb-line"></span
+        ></label>
+        <nav class="nav">
+          <ul class="nav-content">
+            <li>
+              <a class="mobile-nav-text display-text" href="index.html">home</a>
+            </li>
+            <li>
+              <a class="mobile-nav-text display-text" href="productions.html"
+                >productions</a
+              >
+            </li>
+            <li>
+              <a class="mobile-nav-text display-text" href="videos.html"
+                >videos</a
+              >
+            </li>
+            <li>
+              <a class="mobile-nav-text display-text" href="music.html"
+                >music</a
+              >
+            </li>
+            <li>
+              <a class="mobile-nav-text display-text" href="contact.html"
+                >contact</a
+              >
+            </li>
+          </ul>
+          <div class="social-container">
+            <a
+              class="mobile-nav-social-link"
+              target="_blank"
+              href="https://www.twitter.com/GerhardOrGoHome/"
+            >
+              <img
+                class="margin-medium"
+                src="images/icons/twitter-icon-200w.png"
+                alt="Twitter icon"
+              />
+            </a>
+            <a
+              class="mobile-nav-social-link"
+              target="_blank"
+              href="https://www.instagram.com/gerhardorgohome/"
+            >
+              <img
+                class="margin-medium"
+                src="images/icons/instagram-icon-200w.png"
+                alt="Instagram icon"
+              />
+            </a>
+            <a
+              class="mobile-nav-social-link"
+              target="_blank"
+              href="https://www.facebook.com/jack.gerhard.3"
+            >
+              <img
+                class="margin-medium"
+                src="images/icons/facebook-icon-200w.png"
+                alt="Facebook icon"
+              />
+            </a>
+          </div>
+        </nav>
+      </header>
+      <main>
+        <div class="desktop-flex-row-wrapper">
+          <div class="desktop-flex-col-wrapper-images">
+            <div class="img-wrap">
+              <img
+                src="images/content/contact-page/jack-gerhard-tank-top-headshot.png"
+                alt="Actor Jack Gerhard in a blue tanktop"
+              />
+            </div>
+            <div class="img-wrap">
+              <img
+                src="images/content/contact-page/once-guy-and-girl-342x351.png"
+                alt="Guy and girl sitting one seat apart on stage, listening to
+              music"
+              />
+            </div>
+          </div>
+          <div class="desktop-flex-col-wrapper-forms">
+            <div class="contact-wrapper display-text">
+              <h2 class="margin-large">Agent Contact</h2>
+              <div class="agent-wrapper">
+                <img src="images/content/contact-page/hybrid-agency.png" />
+              </div>
+              <address class="margin-large">
+                315 W. 36TH STREET<br />
+                8TH FLOOR NY NY 10018<br />
+                <a href="mailto:RF@THEHYBRIDAGENCY.COM"
+                  >RF@THEHYBRID<span id="word-break"><wbr /></span>AGENCY.COM</a
+                ><br />
+                <a href="tel:+12018197785">201.819.7785</a>
+              </address>
+            </div>
+            <div id="direct-contact" class="contact-wrapper display-text">
+              <form>
+                <h2 class="margin-large">Actor Contact</h2>
+                <input type="text" id="name" name="name" placeholder="Name" />
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Email"
+                />
+                <textarea
+                  name="message"
+                  rows="4"
+                  wrap="soft"
+                  placeholder="Message"
+                ></textarea>
+                <button class="margin-bottom-large" type="submit">Send</button>
+              </form>
+            </div>
+          </div>
         </div>
-      </nav>
-    </header>
-    <main>
-      <div class="contact-wrapper">
-        <h2>Agent Contact</h2>
-        <div class="agent-wrapper">
-          <img src="images/content/contact-page/hybrid-agency.png" />
+      </main>
+      <footer>
+        <div class="content-wrapper">
+          <div class="social-container">
+            <a target="_blank" href="https://www.twitter.com/GerhardOrGoHome/">
+              <img
+                class="margin-small"
+                src="images/icons/twitter-icon-200w.png"
+                alt="Twitter icon"
+              />
+            </a>
+            <a
+              target="_blank"
+              href="https://www.instagram.com/gerhardorgohome/"
+            >
+              <img
+                class="margin-small"
+                src="images/icons/instagram-icon-200w.png"
+                alt="Instagram icon"
+              />
+            </a>
+            <a target="_blank" href="https://www.facebook.com/jack.gerhard.3/">
+              <img
+                class="margin-small"
+                src="images/icons/facebook-icon-200w.png"
+                alt="Facebook icon"
+              />
+            </a>
+          </div>
+          <div class="footnote copyright">&copy; 2020 Jack Gerhard</div>
         </div>
-        <address>
-          <a href=""></a>
-          <a href=""></a>
-        </address>
-      </div>
-      <div class="contact-wrapper">
-        <form>
-          <h2>Direct Contact</h2>
-          <input type="text" id="name" name="name" placeholder="Name" />
-          <input type="email" id="email" name="email" placeholder="Email" />
-          <textarea
-            rows="5"
-            wrap="soft"
-            placeholder="Add a message!"
-          ></textarea>
-        </form>
-      </div>
-    </main>
-    <footer>
-      <div class="content-wrapper">
-        <div class="social-container">
-          <a target="_blank" href="https://www.twitter.com/GerhardOrGoHome/">
-            <img src="images/icons/twitter-icon-200w.png" alt="Twitter icon" />
-          </a>
-          <a target="_blank" href="https://www.instagram.com/gerhardorgohome/">
-            <img
-              src="images/icons/instagram-icon-200w.png"
-              alt="Instagram icon"
-            />
-          </a>
-          <a target="_blank" href="https://www.facebook.com/jack.gerhard.3/">
-            <img
-              src="images/icons/facebook-icon-200w.png"
-              alt="Facebook icon"
-            />
-          </a>
-        </div>
-        <div class="copy-text">&copy; 2020 Jack Gerhard</div>
-      </div>
-    </footer>
+      </footer>
+    </div>
   </body>
 </html>

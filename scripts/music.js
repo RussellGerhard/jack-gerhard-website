@@ -19,6 +19,29 @@ const titles = ["Roseanne", "One Last Time", "Can't Slow Down"];
 let currentSongIndex = -1;
 let isPaused = false;
 
+// Pause and play music on spacebar as well
+function handleSpaceBar(e) {
+  if (e.key == " " || e.code == "Space" || e.keyCode == 32){
+    e.preventDefault();
+    if (currentSongIndex >= 0) {
+      if (isPaused) {
+      // Remove pause icon, add play icon
+      playBoxNumbers[currentSongIndex].classList.remove('fa-play');
+      playBoxNumbers[currentSongIndex].classList.add('fa-pause');
+      // Resume track
+      audio.play();
+      isPaused = false;
+      } else {
+      // Remove play icon, add pause icon
+      playBoxNumbers[currentSongIndex].classList.remove('fa-pause');
+      playBoxNumbers[currentSongIndex].classList.add('fa-play');
+      // Pause track
+      audio.pause();
+      isPaused = true;
+      }
+    }
+  }
+}
 
 // Update displays and audio control when a song display is clicked
 function handleSongClick(e) {
@@ -29,6 +52,7 @@ function handleSongClick(e) {
     if (currentSongIndex >= 0) {
       songDisplays[currentSongIndex].classList.remove('current-song');
       playBoxNumbers[currentSongIndex].classList.remove('fa', 'fa-play', 'fa-pause', 'fa-icon-adjust');
+      playBoxNumbers[currentSongIndex].classList.add('display-text');
       playBoxNumbers[currentSongIndex].textContent = `${currentSongIndex + 1}`;
     }
 
@@ -36,6 +60,7 @@ function handleSongClick(e) {
     // and add active background and play symbol
     currentSongIndex = this.i;
     songDisplays[currentSongIndex].classList.add('current-song');
+    playBoxNumbers[currentSongIndex].classList.remove('display-text');
     playBoxNumbers[currentSongIndex].classList.add('fa', 'fa-pause', 'fa-icon-adjust');
     playBoxNumbers[currentSongIndex].textContent = '';
 
@@ -93,5 +118,6 @@ for (let i = 0; i < songDisplays.length; i++) {
   songDisplays[i].addEventListener('click', handleSongClick);
 }
 
-audio.onplay = handleAudioPlay;
-audio.onpause = handleAudioPause;
+document.body.addEventListener("keydown", handleSpaceBar);
+audio.addEventListener("play", handleAudioPlay);
+audio.addEventListener("pause", handleAudioPause);
