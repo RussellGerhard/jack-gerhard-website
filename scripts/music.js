@@ -13,7 +13,7 @@ const playBoxNumbers = document.getElementsByClassName('play-box-number');
 const sources = ["audio/01 - Jack Gerhard - Roseanne.mp3",
                  "audio/02 - Jack Gerhard - One Last Time.mp3",
                  "audio/03 - Jack Gerhard - Can't Slow Down.mp3"];
-const titles = ["Roseanne", "One Last Time", "Can't Slow Down"];
+const song_titles = ["Roseanne", "One Last Time", "Can't Slow Down"];
 
 // Keep track of state of player
 let currentSongIndex = -1;
@@ -65,7 +65,7 @@ function handleSongClick(e) {
     playBoxNumbers[currentSongIndex].textContent = '';
 
     // Change displayed title, audio source, then load, play, and update state
-    currentTitle.innerText = titles[this.i];
+    currentTitle.innerText = song_titles[this.i];
     audioSource.src = sources[this.i];
     audio.load();
     audio.play();

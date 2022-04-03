@@ -99,7 +99,7 @@ address a {
     margin-bottom: 32px;
   }
 
-  .desktop-flex-row-wrapper {
+  .contact-desktop-flex-row-wrapper {
     margin: 32px auto;
     display: flex;
     flex-flow: row nowrap;

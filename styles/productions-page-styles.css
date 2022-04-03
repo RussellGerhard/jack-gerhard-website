@@ -183,7 +183,7 @@
 }
 
 @media (min-width: 54em) {
-  .desktop-flex-row-wrapper {
+  .production-desktop-flex-row-wrapper {
     margin: 16px auto;
     display: flex;
     flex-flow: row wrap;
@@ -197,7 +197,7 @@
 }
 
 @media (min-width: 105em) {
-  .desktop-flex-row-wrapper {
+  .production-desktop-flex-row-wrapper {
     width: 80%;
   }
 }
