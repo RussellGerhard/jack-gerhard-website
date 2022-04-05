@@ -2,23 +2,47 @@
     width: 100%;
 }
 
-.resume-wrapper img {
-    display: block;
-    margin: 0 auto;
-    max-width: 100%;
-}
-
+/* Download button styling */
 .download-wrapper a {
     display: block;
     width: min-content;
     margin: 16px auto;
-    padding: 4px;
+    padding: 8px;
     border: 2px solid var(--color-primary-dark);
     color: var(--color-primary-dark);
 }
 
+/* Mobile active */
+.download-wrapper a:active {
+    background-color: var(--color-primary-dark);
+    color: var(--color-primary-light);
+}
+
+/* Desktop hover and active */
+@media (hover: hover) {
+  .download-wrapper a:hover {
+    background-color: var(--color-primary-dark);
+    color: var(--color-primary-light);
+  }
+
+  .download-wrapper a:active {
+    color: var(--color-primary-dark);
+    background-color: var(--color-primary-light);
+  }
+}
+
+/* Responsive centering */
 @media (min-width: 35.9375em) {
     .resume-wrapper {
-        margin: min(100vw - 575px, 32px) 0;
+        margin: min(100vw - 575px, 16px) 0;
     }
 }
+
+/* Desktop margin shift */
+@media (min-width: 60em) {
+    .resume-wrapper {
+        margin: 16px auto;
+    }
+}
+
+

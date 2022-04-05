@@ -1,25 +1,21 @@
+/* Show card max width and spacing */
 .show-content {
   max-width: 400px;
   margin: 16px 0;
 }
 
+/* Show card header spacing*/
 .show-content .show-info {
   max-width: 100%;
   padding: 8px;
-  border: 3px solid var(--color-primary-dark);
 
-  background-color: var(--color-primary-light);
-  color: var(--color-primary-dark);
+  border: 3px solid var(--color-primary-dark);
   letter-spacing: 1px;
 }
 
+/* Show card header interior spacing */
 .theater {
-  text-align: center;
   margin-bottom: 4px;
-}
-
-.year {
-  text-align: center;
 }
 
 /*
@@ -27,15 +23,18 @@
   https://dev.to/coderjay06/how-to-build-a-carousel-from-scratch-531c
   with my own modifications
 */
+
+/* Make sure later absolute positioning is relative to the carousel */
 .carousel {
-  max-width: 400px;
   position: relative;
 }
 
+/* Hide carousel images by default */
 .carousel .carousel-item {
   display: none;
 }
 
+/* Revela the current, visible image */
 .carousel .carousel-item-visible {
   display: block;
 }
@@ -47,6 +46,7 @@
   animation: fadeVisibility 1s;
 }
 
+/* Position prev and next arrows */
 .carousel .carousel-actions {
   /* Center with all space btw using flex */
   position: absolute;
@@ -57,15 +57,12 @@
   justify-content: space-between;
 }
 
+/* Style prev and next arrows */
 .carousel .carousel-actions div {
   height: 70px;
   width: 50px;
   color: white;
   font-size: 40px;
-}
-
-.carousel .carousel-actions div:hover {
-  cursor: pointer;
 }
 
 .carousel .carousel-actions .left-arrow {
@@ -82,7 +79,13 @@
   margin-right: 3px;
 }
 
+/* Link styling of prev and next arrows */
 @media (hover: hover) {
+  .carousel .carousel-actions div:hover {
+    cursor: pointer;
+    color: var(--color-secondary-light);
+  }
+
   .carousel .carousel-actions .carousel-next:hover {
     background-image: linear-gradient(
       to right,
@@ -100,6 +103,7 @@
   }
 }
 
+/* Position tabs that display state of carousel */
 .carousel-tabs {
   width: 200px;
   position: absolute;
@@ -111,6 +115,7 @@
   justify-content: center;
 }
 
+/* Style tabs */
 .carousel-tabs .tab {
   flex: 1;
   height: 3px;
@@ -125,28 +130,32 @@
   background-color: white;
 }
 
+/* Show card footer spacing */
 .show-content .title-role-wrapper {
   padding: 8px;
   border: 3px solid var(--color-primary-dark);
-  text-align: center;
-  color: var(--color-primary-dark);
   display: flex;
   flex-flow: column nowrap;
 }
 
+/* Show card footer interior spacing */
 .title {
   flex: 1;
   margin-bottom: 4px;
+  
+  animation: fadeVisibility 1s;
+}
+
+.role {
+  flex: 1;
+
+  animation: fadeVisibility 1s;
 }
 
 /* Utitility class for long titles */
 .title-small-font {
   padding: 6px 0;
   font-size: 20px;
-}
-
-.role {
-  flex: 1;
 }
 
 @keyframes fadeVisibility {
@@ -158,6 +167,10 @@
   }
 }
 
+/* 
+  Turn shows into cards with rounded corners and box-shadow
+  when they hit their max width of 400px (25em)
+*/
 @media (min-width: 25em) {
   .show-content .show-info {
     border-top-left-radius: min(100vw - 400px, var(--corner-radius));
@@ -182,9 +195,10 @@
   }
 }
 
-@media (min-width: 54em) {
+/* Desktop layout with row-wrapped flexbox */
+@media (min-width: 60em) {
   .production-desktop-flex-row-wrapper {
-    margin: 16px auto;
+    margin: 8px auto;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -192,12 +206,23 @@
   }
 
   .show-content {
-    margin: 16px;
+    margin: 8px;
   }
 }
 
+/*
+  Reduce flexbox width to force a 3x2 on 1920px width diplays.
+  Without this rule, it would run 4 on top and 2 on bottom.
+*/
 @media (min-width: 105em) {
   .production-desktop-flex-row-wrapper {
     width: 80%;
+  }
+}
+
+/* Same idea but for 4K */
+@media (min-width: 135em) {
+  .production-desktop-flex-row-wrapper {
+    width: 60%;
   }
 }

@@ -1,27 +1,14 @@
-.album-display {
-  letter-spacing: 1px;
-  font-weight: 300;
-  text-align: center;
-}
-
-#current-title-display {
-  font-weight: 500;
-  text-align: center;
-}
-
+/* Hide desktop image */
 .desktop-img-container {
   display: none;
 }
 
+/* Set mobile component max width for desktop display */
 .mobile-content-wrapper {
-  max-width: 500px;
+  max-width: 480px;
 }
 
-.mobile-img-wrapper img {
-  display: block;
-  max-width: 100%;
-}
-
+/* General music player style */
 .music-player {
   color: var(--color-primary-light);
   background-color: var(--color-primary-dark);
@@ -32,10 +19,19 @@
   );
 }
 
-/* Odd padding value to make height match desktop image */
+/* Music player display */
+.album-display {
+  letter-spacing: 1px;
+  font-weight: 300;
+}
+
+#current-title-display {
+  font-weight: 500;
+}
+
 audio {
   width: calc(100% - 32px);
-  margin: 15.4px 16px;
+  margin: 0 16px;
 }
 
 audio:focus {
@@ -46,20 +42,22 @@ audio::-webkit-media-controls-panel {
   background-color: var(--color-primary-light);
 }
 
+/* Song items display */
 .song-display {
   position: relative;
   display: flex;
-  padding: 30px 16px;
+  padding: 16px 16px;
   border-top: 1px solid var(--color-primary-light);
 }
 
+/* Song items link styling */
 @media (hover: hover) {
   .song-display:hover {
     background-color: rgb(143, 35, 44);
     cursor: pointer;
   }
 
-  .song-display:last-child {
+  .song-display:last-child:hover {
     border-bottom-left-radius: min(100vw - 500px, 16px);
     border-bottom-right-radius: min(100vw - 500px, 16px);
   }
@@ -69,10 +67,7 @@ audio::-webkit-media-controls-panel {
   background-color: rgb(143, 35, 44);
 }
 
-.song-display:active {
-  background-color: var(--color-primary-dark);
-}
-
+/* Song items interior layout */
 .song-display .name-play-box {
   padding: 4px;
   flex: 1;
@@ -83,10 +78,6 @@ audio::-webkit-media-controls-panel {
   flex: 1;
 }
 
-.fa-icon-adjust {
-  font-size: 16px;
-}
-
 .name-play-box .play-box-name {
   flex: 9;
 }
@@ -95,43 +86,58 @@ audio::-webkit-media-controls-panel {
   padding: 4px;
 }
 
+/* Song play/pause icon size adjustment */
+.fa-icon-adjust {
+  font-size: 16px;
+  font-weight: 100;
+}
+
+/* Mobile footer upper boarder merges with song list */
 footer {
   box-shadow: none;
   border-top: 1px solid var(--color-primary-light);
 }
 
-@media (min-width: 31.25em) {
+/* 
+  Mobile image and music player max width is 480px, so they
+  grow into cards with shadows after 30em width is reached
+*/
+@media (min-width: 30em) {
+  /* Give footer it's normal drop shadow once there is space */
   footer {
     box-shadow: -1px -1px 4px 0px var(--color-secondary-dark);
     border-top: none;
   }
 
   .mobile-content-wrapper {
-    margin: 0 auto;
+    margin: 16px auto;
   }
 
   .mobile-img-wrapper {
-    margin: min(100vw - 500px, 16px);
+    margin-right: min(100vw - 480px, 0px);
+    margin-bottom : 16px;
   }
 
   .mobile-img-wrapper img {
-    border-radius: min(100vw - 500px, var(--corner-radius));
+    border-radius: min(100vw - 480px, var(--corner-radius));
     box-shadow: 2px 2px 4px black;
   }
 
   .music-player {
-    margin: min(100vw - 500px, 16px);
-
-    border-radius: min(100vw - 500px, var(--corner-radius));
+    border-radius: min(100vw - 480px, var(--corner-radius));
     box-shadow: 2px 2px 4px black;
   }
 
   .current-song:last-child {
-    border-bottom-right-radius: min(100vw - 500px, var(--corner-radius));
-    border-bottom-left-radius: min(100vw - 500px, var(--corner-radius));
+    border-bottom-right-radius: min(100vw - 480px, var(--corner-radius));
+    border-bottom-left-radius: min(100vw - 480px, var(--corner-radius));
   }
 }
 
+/*
+  Reveal desktop image for desktop layout at 960px,
+  layout the mobile content in its own flexible row.
+*/
 @media (min-width: 60em) {
   .desktop-img-container {
     display: block;
@@ -145,13 +151,16 @@ footer {
 
   .mobile-content-wrapper {
     max-width: none;
-    width: 952px;
+    width: 920px;
     flex: 1;
     display: flex;
     flex-flow: row nowrap;
+    margin: 0 auto;
   }
 
   .mobile-content-wrapper .mobile-img-wrapper {
+    margin-right: 16px;
+    margin-bottom: 0px;
     flex: 1;
   }
 
@@ -164,11 +173,6 @@ footer {
     display: flex;
     flex-flow: row nowrap;
     margin: 0 auto;
-  }
-
-  .desktop-img-container img {
-    margin: 16px;
-    border-radius: var(--corner-radius);
-    box-shadow: 2px 2px 4px black;
+    margin-top: 16px;
   }
 }

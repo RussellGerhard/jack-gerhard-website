@@ -29,9 +29,9 @@ body {
   background-color: var(--color-primary-light);
 }
 
+/* Leave room for height of footer */
 .page-container {
-  /* Leave room for footer */
-  padding-bottom: 70px;
+  padding-bottom: 54px;
 }
 
 a {
@@ -42,13 +42,18 @@ ul {
   list-style-type: none;
 }
 
+/* Page load animation */
+.site-page {
+  animation: fadeVisibility 1.25s;
+}
+
 /* Major Second Type Scale */
 .citation {
   font-size: calc(1em / 1.125 / 1.125 / 1.125);
 }
 
 .footnote {
-  font-size: calc(1em / 1.125 / 1.125 / 1.125 / 1.125);
+  font-size: calc(1em / 1.125 / 1.125 / 1.125 / 1.125 / 1.125);
 }
 
 p {
@@ -154,7 +159,7 @@ header {
   );
   overflow: hidden;
 
-  transition: height 0.4s ease-in-out;
+  transition: height 0.3s ease-in-out;
 }
 
 /* Create a vertical flexbox for nav links */
@@ -164,12 +169,9 @@ nav .nav-content {
   width: 100%;
 }
 
+/* Style nav links */
 .nav-content li {
   flex: 1;
-}
-
-/* Style nav links */
-.nav-content a {
   display: block;
   width: min-content;
   margin: 0 auto;
@@ -179,16 +181,26 @@ nav .nav-content {
   color: var(--color-primary-light);
 }
 
-/* Reverse color palette on hover */
-.nav a:hover {
+
+.nav li:active {
   color: var(--color-secondary-light);
   text-shadow: 1px 1px 1px var(--color-primary-light);
 }
 
-/* Restore original color palette on activate */
-.nav a:active {
-  color: var(--color-primary-light);
-  text-shadow: 1px 1px 1px var(--color-secondary-light);
+/* Desktop hover and active nav links */
+@media (hover:hover) {
+  /* Reverse color palette on hover */
+  .nav li:hover {
+    color: var(--color-secondary-light);
+    text-shadow: 1px 1px 1px var(--color-primary-light);
+    cursor: pointer;
+  }
+
+  /* Restore original color palette on activate */
+  .nav li:active {
+    color: var(--color-primary-light);
+    text-shadow: 1px 1px 1px var(--color-secondary-light);
+  }
 }
 
 /* Create a container for socials in last nav element */
@@ -283,11 +295,6 @@ nav .nav-content {
   top: 0;
 }
 
-/* !! MAIN TRANSITION */
-main {
-  animation: fadein 1.25s;
-}
-
 @keyframes fadein {
   from {
     opacity: 0.1;
@@ -298,13 +305,12 @@ main {
 }
 
 /* !! FOOTER COMPONENT */
-/* Style footer to match header */
 footer {
   position: absolute;
   bottom: 0;
-  height: 70px;
+  height: 54px;
   width: 100%;
-  padding: 8px 0;
+  padding: 4px 0;
 
   box-shadow: -1px -1px 4px 0px var(--color-secondary-dark);
 
@@ -330,7 +336,7 @@ footer .social-container a {
 /* Display block removes white space under img */
 footer .social-container img {
   display: block;
-  width: 32px;
+  width: 24px;
 }
 
 footer .content-wrapper .copyright {
@@ -339,6 +345,11 @@ footer .content-wrapper .copyright {
 }
 
 /* !! UTILITY CLASSES*/
+.resp-img {
+    max-width: 100%;
+    display: block;
+}
+
 .inline-block {
   display: inline-block;
 }
@@ -347,17 +358,60 @@ footer .content-wrapper .copyright {
   display: none;
 }
 
-/* !! MEDIA QUERIES */
+.no-scroll {
+  overflow: hidden;
+}
 
-/* Tablet layout */
+.rounded {
+  border-radius: var(--corner-radius);
+}
+
+.shadow {
+  box-shadow: 2px 2px 4px black;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.div-centered {
+    margin: 0 auto;
+}
+
+.bounce {
+  position: relative;
+  top: -5px;
+}
+
+.text-primary-dark {
+  color: var(--color-primary-dark);
+}
+
+.text-primary-light {
+  color: var(--color-primary-light); 
+}
+
+.back-primary-dark {
+   background-color: var(--color-primary-dark);
+}
+
+.back-primary-light {
+   background-color: var(--color-primary-light);
+}
+
+/* Responsive font size increase */
 @media (min-width: 40em) {
   body {
     font-size: 1.125rem;
   }
 }
 
-/* Switch to desktop header */
-@media (min-width: 50em) {
+/* Switch to desktop layout and header */
+@media (min-width: 60em) {
+  body {
+    font-size: calc(1.125 * 1.125rem);
+  }
+
   .logo-text {
     margin-right: 0;
   }
@@ -365,8 +419,8 @@ footer .content-wrapper .copyright {
   .nav {
     position: static;
     float: right;
-    width: min(780px, 78%);
-    margin: 16px 0;
+    width: calc(100% - 176px);
+    margin: 15.5px 0;
 
     background-color: transparent;
     background-image: none;
@@ -394,29 +448,21 @@ footer .content-wrapper .copyright {
   }
 }
 
-/* Desktop layout */
-@media (min-width: 60em) {
-  body {
-    font-size: calc(1.125 * 1.125rem);
-  }
-
+/*
+  Pad both margins to both grow desktop nav
+  and keep it centered from 1040px onward
+*/
+@media (min-width: 64em) {
   .nav {
-    margin: 15px 0;
-  }
-}
-
-/* Pad right margin to gradually center desktop nav from 1000px to 1220px */
-@media (min-width: 62.5em) {
-  .nav {
-    margin-right: calc(100% - 1000px);
+    width: 848px;
+    margin-right: calc(100% - 1024px);
   }
 }
 
-/* Pad both margins to keep desktop nav centered from 1220px onward */
-@media (min-width: 76.25em) {
+@media (min-width: 75em) {
   .nav {
-    width: calc(780px + ((100% - 1220px) / 3));
-    margin-right: calc(220px + ((100% - 1220px) / 3));
-    margin-left: calc((100% - 1220px) / 3);
+    width: calc(848px + calc((100% - 1200px) / 3));
+    margin-right: calc((100% - 672px) / 3);
+    margin-left: calc((100% - 1200px) / 3);
   }
 }
