@@ -6,6 +6,8 @@ const mobile_nav = document.getElementById('mobile-nav');
 const pages = document.getElementsByClassName('site-page');
 const num_pages = pages.length;
 let current_page_index = 0;
+// hack to make sure audio pause works when navigating away from music page div
+let navigating = false;
 
 
 // ********** HOME PAGE ELEMENTS **********
@@ -56,7 +58,6 @@ const song_titles = ["Roseanne", "One Last Time", "Can't Slow Down"];
 
 // Keep track of state of player
 let currentSongIndex = -1;
-let isPaused = false;
 
 
 // ********** NAV FUNCTIONS **********
@@ -68,12 +69,25 @@ function handleHambClick() {
     // Else we're entering nav so take away scroll
     } else {
       document.body.classList.add('no-scroll');
-
+      // Pause any active media
+      if (!buddy_video.paused) {
+        buddy_video.pause();
+      }
+      if (!audio.paused) {
+        audio.pause();
+      }
+      for (video of videos) {
+        if (!video.paused) {
+            video.pause();
+        }
+      }
     }
 }
 
 // Navigate to a new page on nav click
 function handleNavLinkClick() {
+
+    document.getElementsByTagName('main')[0]
 
     // We're using mobile navigation and must remove overlay and add back scroll
     if (mobile_nav_checkbox.checked) {
@@ -81,42 +95,65 @@ function handleNavLinkClick() {
         document.body.classList.remove('no-scroll');
     }
 
-    if (this.i !== current_page_index) {
-        pages[current_page_index].classList.add('hidden');
-        pages[this.i].classList.remove('hidden');
-        current_page_index = this.i;
+    // Leaving, we need to reset it
+    // Going to home page, pause buddy video
+    // Pause becasue we only want to autoplay on initial landing
+    if (this.i === 0 || current_page_index === 0) {
+        buddy_video.currentTime = 0;
+        buddy_video.pause();
     }
-}
 
-// Pause and play music on spacebar as well
-function handleSpaceBar(e) {
-  if (e.key == " " || e.code == "Space" || e.keyCode == 32){
-    e.preventDefault();
-    if (currentSongIndex >= 0) {
-      if (isPaused) {
-      // Remove pause icon, add play icon
-      playBoxNumbers[currentSongIndex].classList.remove('fa-play');
-      playBoxNumbers[currentSongIndex].classList.add('fa-pause');
-      // Resume track
-      audio.play();
-      isPaused = false;
-      } else {
-      // Remove play icon, add pause icon
-      playBoxNumbers[currentSongIndex].classList.remove('fa-pause');
-      playBoxNumbers[currentSongIndex].classList.add('fa-play');
-      // Pause track
-      audio.pause();
-      isPaused = true;
-      }
+    // Going to carousels, reset positions
+    if (this.i === 1) {
+        resetCarousels();
     }
-  }
+
+    // Leaving videos, reset video displays
+    if (current_page_index === 2) {
+        for (video of videos) {
+            video.currentTime = 0;
+            video.pause();
+            video.removeAttribute("controls");
+        }
+
+        for (overlay of text_overlays) {
+            overlay.classList.remove('hidden')
+        }
+
+        for (overlay of screen_overlays) {
+            overlay.classList.remove('hidden')
+        }
+    }
+
+    // Leaving music, reset music player
+    if (current_page_index === 3) {
+        audio.currentTime = 0;
+        let navigating = true;
+        audio.pause();
+        navigating = false;
+        if (currentSongIndex >= 0) {
+          songDisplays[currentSongIndex].classList.remove('current-song');
+          playBoxNumbers[currentSongIndex].classList.remove('fa', 'fa-play', 'fa-pause', 'fa-icon-adjust');
+          playBoxNumbers[currentSongIndex].classList.add('display-text');
+          playBoxNumbers[currentSongIndex].textContent = `${currentSongIndex + 1}`;
+        }
+
+        // Reset page state
+        currentSongIndex = -1;
+        currentTitle.innerText = song_titles[0];
+        audioSource.src = sources[0];
+        audio.load();
+    }
+
+    pages[current_page_index].classList.add('hidden');
+    pages[this.i].classList.remove('hidden');
+    current_page_index = this.i;
 }
 
 
 // ********** HOME PAGE FUNCTIONS **********
 // Autoplay once (function for desktop)
 function autoplay() {
-    console.log(autoplayed);
     if (!autoplayed) {
         buddy_video.play();
         autoplayed = true;
@@ -231,7 +268,7 @@ function handleMoveToNextSlide() {
         positions[this.i] = 0;
     } else {
         positions[this.i] = positions[this.i] + 1;
-    }
+    };
 
     // Update show title and role
     changeShowText(this.i);
@@ -240,6 +277,38 @@ function handleMoveToNextSlide() {
     carousels[this.i].children[0].children[positions[this.i]].classList.add('carousel-item-visible');
     // Activate tab of current slide
     carousels[this.i].children[1].children[positions[this.i]].classList.add('active-tab');
+}
+
+function resetCarousels() {
+    for (carousel of carousels) {
+        let i = 0;
+        for (item of carousel.children[0].children) {
+            // Reset images and tabs
+            if (i === 0) {
+                item.classList.add('carousel-item-visible');
+                carousel.children[1].children[i].classList.add("active-tab");
+            } else {
+                item.classList.remove('carousel-item-visible');
+                carousel.children[1].children[i].classList.remove("active-tab");
+            };
+            i++;
+        };
+
+        // Reset carousel footer text (show and role info)
+        titles[3].textContent = 'Jesus Christ Superstar';
+        titles[3].classList.remove('title-small-font')
+        roles[3].textContent = 'Jesus';
+
+        titles[4].textContent = 'Life Could Be A Dream';
+        roles[4].textContent = 'Eugene';
+
+        titles[5].textContent = 'Oklahoma';
+        roles[5].textContent = 'Curly';
+    };
+
+    for (let i = 0; i < numberOfCarousels; i++) {
+        positions[i] = 0;
+    }
 }
 
 
@@ -315,21 +384,18 @@ function handleSongClick(e) {
     audioSource.src = sources[this.i];
     audio.load();
     audio.play();
-    isPaused = false;
-  } else if (isPaused) { 
+  } else if (audio.paused) { 
     // Remove pause icon, add play icon
     playBoxNumbers[currentSongIndex].classList.remove('fa-play');
     playBoxNumbers[currentSongIndex].classList.add('fa-pause');
     // Resume track
     audio.play();
-    isPaused = false;
   } else {
     // Remove play icon, add pause icon
     playBoxNumbers[currentSongIndex].classList.remove('fa-pause');
     playBoxNumbers[currentSongIndex].classList.add('fa-play');
     // Pause track
     audio.pause();
-    isPaused = true;
   }
 }
 
@@ -348,16 +414,37 @@ function handleAudioPlay(e) {
     playBoxNumbers[currentSongIndex].classList.remove('fa-play');
     playBoxNumbers[currentSongIndex].classList.add('fa-pause');
   }
-
-  isPaused = false;
 }
 
 // Update song displays when the audio is paused
 function handleAudioPause(e) {
-  playBoxNumbers[currentSongIndex].classList.remove('fa-pause');
-  playBoxNumbers[currentSongIndex].classList.add('fa-play');
+  if (!navigating) {
+    playBoxNumbers[currentSongIndex].classList.remove('fa-pause');
+    playBoxNumbers[currentSongIndex].classList.add('fa-play');
+  }
+}
 
-  isPaused = true;
+// Pause and play music on spacebar as well
+function handleSpaceBar(e) {
+  if (e.key == " " || e.code == "Space" || e.keyCode == 32){
+    e.preventDefault();
+        if (currentSongIndex >= 0) {
+          if (audio.paused) {
+            // Remove pause icon, add play icon
+            playBoxNumbers[currentSongIndex].classList.remove('fa-play');
+            playBoxNumbers[currentSongIndex].classList.add('fa-pause');
+            // Resume track
+            audio.play();
+          } else {
+            // Remove play icon, add pause icon
+            playBoxNumbers[currentSongIndex].classList.remove('fa-pause');
+            playBoxNumbers[currentSongIndex].classList.add('fa-play');
+            // Pause track
+            audio.pause();
+            isPaused = true;
+          }
+        }
+  }
 }
 
 
@@ -374,8 +461,6 @@ for (let i = 0; i < num_pages; i++) {
 
 // ********** HOME PAGE LISTENERS **********
 if (mq.matches) {
-    console.log(width);
-    console.log(mq.matches);
     autoplay();
 } else {
     handleMobileVideoViewIntersection();

@@ -149,7 +149,7 @@ header {
   height: 0%;
   width: 100%;
   position: fixed;
-  top: 76px;
+  top: 75px;
 
   background-color: var(--color-primary-dark);
   background-image: linear-gradient(
