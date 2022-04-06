@@ -88,7 +88,7 @@ audio::-webkit-media-controls-panel {
 
 /* Song play/pause icon size adjustment */
 .fa-icon-adjust {
-  font-size: 16px;
+  font-size: 13px;
   font-weight: 100;
 }
 
@@ -103,6 +103,11 @@ footer {
   grow into cards with shadows after 30em width is reached
 */
 @media (min-width: 30em) {
+  /* Adjust icon size for play/pause */
+  .fa-icon-adjust {
+    font-size: 15px;
+  }
+
   /* Give footer it's normal drop shadow once there is space */
   footer {
     box-shadow: -1px -1px 4px 0px var(--color-secondary-dark);
@@ -139,6 +144,11 @@ footer {
   layout the mobile content in its own flexible row.
 */
 @media (min-width: 60em) {
+
+  .fa-icon-adjust {
+    font-size: 16px;
+  }
+
   .desktop-img-container {
     display: block;
   }
