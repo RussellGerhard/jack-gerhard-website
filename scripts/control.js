@@ -1,3 +1,4 @@
+// Nav elements and pages
 const nav_links = document.getElementsByClassName('mobile-nav-text');
 const mobile_nav_checkbox = document.getElementById('side-menu');
 const mobile_nav_checkbox_label = document.getElementsByClassName('hamb')[0];
@@ -14,6 +15,7 @@ function handleHambClick() {
     // Else we're entering nav so take away scroll
     } else {
       document.body.classList.add('no-scroll');
+
     }
 }
 

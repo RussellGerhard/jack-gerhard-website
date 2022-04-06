@@ -37,6 +37,7 @@
     />
     <link rel="stylesheet" href="styles/normalize.css" type="text/css" />
     <link rel="stylesheet" href="styles/generic-styles.css" type="text/css" />
+    <link rel="stylesheet" href="styles/home-page-styles.css" type="text/css" />
     <link
       rel="stylesheet"
       href="styles/productions-page-styles.css"
@@ -79,6 +80,7 @@
     <script src="scripts/control.js" defer></script>
     <script src="scripts/social_hover.js" defer></script>
     <script src="scripts/videos.js" defer></script>
+    <script src="scripts/home_video.js" defer></script>
     <!-- Page title and description -->
     <title>Jack Gerhard</title>
     <meta
@@ -145,37 +147,58 @@
       </header>
       <main>
         <div id="home-page" class="site-page">
-          <div class="main-img-container">
-            <img
-              src="images/content/home-page/jack-gerhard-headshot-500w.jpg"
-              alt="Headshot of actor Jack Gerhard from the chest up in a white henley"
-            />
-          </div>
-          <div class="home-text-box margin-large">
-            <p>
-              Jack is a New York based equity actor, singer, and musician; he
-              attended Rider University and earned a BFA in Musical Theatre with
-              the class of 2019.
-            </p>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate
-              asperiores expedita in quod quam, odio harum pariatur alias
-              molestiae velit error?
-            </p>
-          </div>
-          <div class="main-img-container">
-            <figure>
-              <img
-                src="images/content/home-page/once-guitar-singing-blackout-500w.png"
-                alt="Jack Gerhard, dressed as Guy from the musical Once, playing a guitar and singing"
-              />
-              <figcaption class="citation">
-                Source:
-                <span class="img-source"
-                  >Kinfay Moroti/The News-Press USA Today Network</span
+          <div class="home-content-wrapper">
+            <div class="home-desktop-all-wrapper">
+              <div id="headshot-flex-wrapper" class="home-desktop-col-wrapper">
+                <div id="headshot-img-wrapper" class="home-img-wrapper">
+                  <img
+                    class="resp-img"
+                    src="images/content/home-page/jack-gerhard-headshot-500w.jpg"
+                  />
+                </div>
+                <div
+                  id="actor-announce"
+                  class="announcement text-center text-primary-dark display-text"
                 >
-              </figcaption>
-            </figure>
+                  ACTOR
+                </div>
+              </div>
+              <div class="laptop-wrapper">
+                <div class="home-desktop-col-wrapper">
+                  <div class="home-video-wrapper">
+                    <video id="buddy-holly" controls muted>
+                      <source src="videos/buddy-holly.mp4" />
+                    </video>
+                  </div>
+                  <div
+                    id="musician-announce"
+                    class="announcement text-center text-primary-dark display-text"
+                  >
+                    MUSICIAN
+                  </div>
+                </div>
+                <div class="home-desktop-col-wrapper">
+                  <div class="home-img-wrapper">
+                    <picture>
+                      <source
+                        media="(min-width: 1024px)"
+                        srcset="
+                          images/content/home-page/jack-on-stage-cropped.png
+                        " />
+                      <img
+                        class="resp-img"
+                        src="images/content/home-page/jack-on-stage.png"
+                    /></picture>
+                  </div>
+                  <div
+                    id="singer-announce"
+                    class="announcement text-center text-primary-dark display-text"
+                  >
+                    SINGER
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div id="productions-page" class="site-page hidden">
@@ -486,7 +509,7 @@
         <div id="videos-page" class="site-page hidden">
           <div class="video-content-container">
             <div class="video-container">
-              <video>
+              <video class="overlayed-video">
                 <source src="videos/once_say_it.mp4" type="video/mp4" />
               </video>
               <div class="video-screen-overlay"></div>
@@ -497,7 +520,7 @@
               </div>
             </div>
             <div class="video-container">
-              <video>
+              <video class="overlayed-video">
                 <source src="videos/heathers-highlights.mp4" type="video/mp4" />
               </video>
               <div class="video-screen-overlay"></div>
@@ -508,7 +531,7 @@
               </div>
             </div>
             <div class="video-container">
-              <video>
+              <video class="overlayed-video">
                 <source src="videos/fiddle-demo.mp4" type="video/mp4" />
               </video>
               <div class="video-screen-overlay"></div>

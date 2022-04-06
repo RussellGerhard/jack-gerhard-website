@@ -1,6 +1,6 @@
 const text_overlays = document.getElementsByClassName('video-overlay');
 const screen_overlays = document.getElementsByClassName('video-screen-overlay');
-const videos = document.getElementsByTagName('video');
+const videos = document.getElementsByClassName('overlayed-video');
 const num_videos = videos.length;
 
 function toggleControls(video) {
