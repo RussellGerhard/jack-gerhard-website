@@ -80,7 +80,7 @@ form button {
 }
 
 /* !! DESKTOP LAYOUT */
-@media (min-width: 60em) {
+@media (min-width: 59.875em) {
   #word-break {
     display: none;
   }

@@ -32,14 +32,14 @@
 }
 
 /* Responsive centering */
-@media (min-width: 35.9375em) {
+@media (min-width: 35.875em) {
     .resume-wrapper {
         margin: min(100vw - 575px, 16px) 0;
     }
 }
 
 /* Desktop margin shift */
-@media (min-width: 60em) {
+@media (min-width: 59.9375em) {
     .resume-wrapper {
         margin: 16px auto;
     }

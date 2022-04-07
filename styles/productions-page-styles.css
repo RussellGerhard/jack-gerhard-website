@@ -196,7 +196,7 @@
 }
 
 /* Desktop layout with row-wrapped flexbox */
-@media (min-width: 60em) {
+@media (min-width: 59.875em) {
   .production-desktop-flex-row-wrapper {
     margin: 8px auto;
     display: flex;

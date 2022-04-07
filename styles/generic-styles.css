@@ -27,6 +27,11 @@ body {
   min-height: 100vh;
   color: var(--color-secondary-dark);
   background-color: var(--color-primary-light);
+  scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
 
 /* Leave room for height of footer */
@@ -407,7 +412,7 @@ footer .content-wrapper .copyright {
 }
 
 /* Switch to desktop layout and header */
-@media (min-width: 60em) {
+@media (min-width: 59.875em) {
   body {
     font-size: calc(1.125 * 1.125rem);
   }

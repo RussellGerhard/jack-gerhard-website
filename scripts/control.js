@@ -1,4 +1,5 @@
 // ********** NAV AND PAGE ELEMENTS **********
+const main = document.getElementById('main');
 const nav_links = document.getElementsByClassName('mobile-nav-text');
 const mobile_nav_checkbox = document.getElementById('side-menu');
 const mobile_nav_checkbox_label = document.getElementsByClassName('hamb')[0];
@@ -87,8 +88,6 @@ function handleHambClick() {
 // Navigate to a new page on nav click
 function handleNavLinkClick() {
 
-    document.getElementsByTagName('main')[0]
-
     // We're using mobile navigation and must remove overlay and add back scroll
     if (mobile_nav_checkbox.checked) {
         mobile_nav_checkbox.checked = false;
@@ -145,8 +144,11 @@ function handleNavLinkClick() {
         audio.load();
     }
 
+    // Hide old page, scroll to top, show new page, update current page
     pages[current_page_index].classList.add('hidden');
-    pages[this.i].classList.remove('hidden');
+    setTimeout(() => pages[this.i].classList.remove('hidden'), 5);
+    // setTimeout(() => pages[this.i].classList.remove('hidden'), 5);
+    window.scrollTo(0, 0);
     current_page_index = this.i;
 }
 

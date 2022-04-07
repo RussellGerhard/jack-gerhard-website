@@ -96,10 +96,10 @@
 
     .announcement#singer-announce {
         position: absolute;
-        top: 0px;
-        left: 84px;
+        top: -28px;
+        left: 34px;
 
-        font-size: 50px;
+        font-size: 70px;
         letter-spacing: 10px;
     }
 }
