@@ -1,9 +1,9 @@
 // Get social icon
 const social_icons = document.getElementsByClassName('social');
-const primary_social_list = ["images/icons/instagram-icon-200w.png",
-                             "images/icons/facebook-icon-200w.png"];
-const secondary_social_list = ["images/icons/instagram-icon-secondary-light-200w.png",
-                               "images/icons/facebook-icon-secondary-light-200w.png"];
+const primary_social_list = ["images/icons/instagram-icon-200w-cmp.png",
+                             "images/icons/facebook-icon-200w-cmp.png"];
+const secondary_social_list = ["images/icons/instagram-icon-secondary-light-200w-cmp.png",
+                               "images/icons/facebook-icon-secondary-light-200w-cmp.png"];
 
 // Change source to light social on hover                         
 function handleIconMouseEnter() {

@@ -32,9 +32,10 @@
 }
 
 /* Responsive centering */
-@media (min-width: 35.875em) {
+@media (min-width: 35.9375em) {
     .resume-wrapper {
-        margin: min(100vw - 575px, 16px) 0;
+        max-width: 575px;
+        margin: min(100vw - 500px, 16px) 0;
     }
 }
 
