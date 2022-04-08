@@ -47,11 +47,6 @@ ul {
   list-style-type: none;
 }
 
-/* Page load animation */
-.site-page {
-  animation: fadeVisibility 1.25s;
-}
-
 /* Major Second Type Scale */
 .citation {
   font-size: calc(1em / 1.125 / 1.125 / 1.125);
@@ -416,6 +411,11 @@ footer .content-wrapper .copyright {
 @media (min-width: 59.875em) {
   body {
     font-size: calc(1.125 * 1.125rem);
+  }
+
+  /* Page load animation */
+  .site-page {
+    animation: fadeVisibility 1.25s;
   }
 
   .logo-text {

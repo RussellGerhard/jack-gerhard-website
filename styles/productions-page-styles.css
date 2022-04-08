@@ -9,8 +9,14 @@
   max-width: 100%;
   padding: 8px;
 
-  border: 3px solid var(--color-primary-dark);
   letter-spacing: 1px;
+}
+
+hr {
+  height: 2px;
+  width: 90%;
+  margin: 0 auto;
+  background-color: var(--color-primary-dark);
 }
 
 /* Show card header interior spacing */
@@ -133,7 +139,6 @@
 /* Show card footer spacing */
 .show-content .title-role-wrapper {
   padding: 8px;
-  border: 3px solid var(--color-primary-dark);
   display: flex;
   flex-flow: column nowrap;
 }
@@ -172,7 +177,17 @@
   when they hit their max width of 400px (25em)
 */
 @media (min-width: 25em) {
+  hr {
+    display: none;
+  }
+
+  .show-content {
+    width: 400px;
+    height: 560px;
+  }
+
   .show-content .show-info {
+    border: 3px solid var(--color-primary-dark);
     border-top-left-radius: min(100vw - 400px, var(--corner-radius));
     border-top-right-radius: min(100vw - 400px, var(--corner-radius));
   }
@@ -190,8 +205,16 @@
   }
 
   .show-content .title-role-wrapper {
+    border: 3px solid var(--color-primary-dark);
     border-bottom-left-radius: min(100vw - 400px, var(--corner-radius));
     border-bottom-right-radius: min(100vw - 400px, var(--corner-radius));
+  }
+}
+
+/* Add box-shadow a little late */
+@media (min-width: 25em) {
+  .show-content {
+    box-shadow: 2px 2px 4px black;
   }
 }
 

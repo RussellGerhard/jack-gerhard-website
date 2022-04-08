@@ -1,3 +1,7 @@
+// Decide how to treat social icons based on mobile or desktop layout
+let width = document.documentElement.clientWidth;
+const mq = window.matchMedia( '(min-width: 1024px)' );
+
 // Get social icon
 const social_icons = document.getElementsByClassName('social');
 const primary_social_list = ["images/icons/instagram-icon-200w-cmp.png",
@@ -18,8 +22,10 @@ function handleIconMouseLeave() {
 }
 
 // Listen for mouse enter and exit to change source image
-for (let i = 0; i < 4; i++) {
-    social_icons[i].i = i % 2;
-    social_icons[i].addEventListener('mouseenter', handleIconMouseEnter);
-    social_icons[i].addEventListener('mouseleave', handleIconMouseLeave);
+if (mq.matches) {
+    for (let i = 0; i < 4; i++) {
+        social_icons[i].i = i % 2;
+        social_icons[i].addEventListener('mouseenter', handleIconMouseEnter);
+        social_icons[i].addEventListener('mouseleave', handleIconMouseLeave);
+    }
 }
