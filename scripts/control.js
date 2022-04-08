@@ -97,18 +97,18 @@ function handleNavLinkClick() {
     // Leaving, we need to reset it
     // Going to home page, pause buddy video
     // Pause becasue we only want to autoplay on initial landing
-    if (this.i === 0 || current_page_index === 0) {
+    if (this.i == 0 || current_page_index == 0) {
         buddy_video.currentTime = 0;
         buddy_video.pause();
     }
 
     // Going to carousels, reset positions
-    if (this.i === 1) {
+    if (this.i == 1) {
         resetCarousels();
     }
 
     // Leaving videos, reset video displays
-    if (current_page_index === 2) {
+    if (current_page_index == 2) {
         for (video of videos) {
             video.currentTime = 0;
             video.pause();
@@ -125,7 +125,7 @@ function handleNavLinkClick() {
     }
 
     // Leaving music, reset music player
-    if (current_page_index === 3) {
+    if (current_page_index == 3) {
         audio.currentTime = 0;
         let navigating = true;
         audio.pause();
@@ -203,34 +203,34 @@ function changeShowText(index) {
     // Only change text when transitioning to different show
     // Don't want to reload text every time (multiple photos for same show)
     if (index == 3) {
-        if (positions[3] === 0 || positions[3] === 1) {
+        if (positions[3] == 0 || positions[3] == 1) {
             titles[index].classList.remove('title-small-font')
             titles[index].textContent = 'Jesus Christ Superstar';
             roles[index].textContent = 'Jesus';
-        } else if (positions[3] === 2 || positions[3] === 3) {
+        } else if (positions[3] == 2 || positions[3] == 3) {
             titles[index].classList.add('title-small-font')
             titles[index].textContent = "A Gentleman's Guide to Love and Murder";
             roles[index].textContent = 'Man #1';
         }
     } else if (index == 4) {
-        if (positions[4] === 0 || positions[4] === 1) {
+        if (positions[4] == 0 || positions[4] == 1) {
             titles[index].textContent = 'Life Could Be A Dream';
             roles[index].textContent = 'Eugene';
-        } else if (positions[4] === 2) {
+        } else if (positions[4] == 2) {
             titles[index].textContent = 'Smoke On The Mountain';
             roles[index].textContent = 'Dennis';
         }
     } else if (index == 5) {
-        if (positions[5] === 0 || positions[5] === 1) {
+        if (positions[5] == 0 || positions[5] == 1) {
             titles[index].textContent = 'Oklahoma';
             roles[index].textContent = 'Curly';
-        } else if (positions[5] === 2 || positions[5] === 3 || positions[5] === 4) {
+        } else if (positions[5] == 2 || positions[5] == 3 || positions[5] == 4) {
             titles[index].textContent = 'Heathers';
             roles[index].textContent = 'Kurt';
-        } else if (positions[5] === 5 || positions[5] === 6 || positions[5] === 7) {
+        } else if (positions[5] == 5 || positions[5] == 6 || positions[5] == 7) {
             titles[index].textContent = 'Bonnie & Clyde';
             roles[index].textContent = 'Buck';
-        } else if (positions[5] === 8) {
+        } else if (positions[5] == 8) {
             titles[index].textContent = 'Assassins';
             roles[index].textContent = 'Leon Czolgoz';
         }
@@ -244,7 +244,7 @@ function handleMoveToPrevSlide() {
     carousels[this.i].children[1].children[positions[this.i]].classList.remove("active-tab");
 
     // Check if this was the first slide in the carousel
-    if (positions[this.i] === 0) {
+    if (positions[this.i] == 0) {
         positions[this.i] = numSlides[this.i] - 1;
     } else {
         positions[this.i] = positions[this.i] - 1;
@@ -266,7 +266,7 @@ function handleMoveToNextSlide() {
     carousels[this.i].children[1].children[positions[this.i]].classList.remove("active-tab");
 
     // Check if this was the last slide in the carousel
-    if (positions[this.i] === numSlides[this.i] - 1) {
+    if (positions[this.i] == numSlides[this.i] - 1) {
         positions[this.i] = 0;
     } else {
         positions[this.i] = positions[this.i] + 1;
@@ -286,7 +286,7 @@ function resetCarousels() {
         let i = 0;
         for (item of carousel.children[0].children) {
             // Reset images and tabs
-            if (i === 0) {
+            if (i == 0) {
                 item.classList.add('carousel-item-visible');
                 carousel.children[1].children[i].classList.add("active-tab");
             } else {
@@ -405,7 +405,7 @@ function handleSongClick(e) {
 function handleAudioPlay(e) {
   // If user clicks on audio control before song display,
   // the currentSongIndex must be initialized
-  if (currentSongIndex === -1) {
+  if (currentSongIndex == -1) {
     currentSongIndex = 0;
 
     songDisplays[currentSongIndex].classList.add('current-song');
@@ -427,25 +427,9 @@ function handleAudioPause(e) {
 }
 
 // Pause and play music on spacebar as well
-function handleSpaceBar(e) {
-  if (e.key == " " || e.code == "Space" || e.keyCode == 32){
+function disableSpaceBar(e) {
+  if ((e.key == " " || e.code == "Space" || e.keyCode == 32) && current_page_index == 3){
     e.preventDefault();
-        if (currentSongIndex >= 0) {
-          if (audio.paused) {
-            // Remove pause icon, add play icon
-            playBoxNumbers[currentSongIndex].classList.remove('fa-play');
-            playBoxNumbers[currentSongIndex].classList.add('fa-pause');
-            // Resume track
-            audio.play();
-          } else {
-            // Remove play icon, add pause icon
-            playBoxNumbers[currentSongIndex].classList.remove('fa-pause');
-            playBoxNumbers[currentSongIndex].classList.add('fa-play');
-            // Pause track
-            audio.pause();
-            isPaused = true;
-          }
-        }
   }
 }
 
@@ -497,6 +481,6 @@ for (let i = 0; i < songDisplays.length; i++) {
   songDisplays[i].addEventListener('click', handleSongClick);
 }
 
-document.body.addEventListener("keydown", handleSpaceBar);
+document.body.addEventListener("keydown", disableSpaceBar);
 audio.addEventListener("play", handleAudioPlay);
 audio.addEventListener("pause", handleAudioPause);
