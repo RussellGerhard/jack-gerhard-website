@@ -49,7 +49,6 @@ hr {
   display: block;
   max-width: 100%;
   height: auto;
-  animation: fadeVisibility 1s;
 }
 
 /* Position prev and next arrows */
@@ -147,29 +146,16 @@ hr {
 .title {
   flex: 1;
   margin-bottom: 4px;
-  
-  animation: fadeVisibility 1s;
 }
 
 .role {
   flex: 1;
-
-  animation: fadeVisibility 1s;
 }
 
 /* Utitility class for long titles */
 .title-small-font {
   padding: 6px 0;
   font-size: 20px;
-}
-
-@keyframes fadeVisibility {
-  0% {
-    opacity: 0.25;
-  }
-  100% {
-    opacity: 1;
-  }
 }
 
 /* 
@@ -230,6 +216,19 @@ hr {
 
   .show-content {
     margin: 8px;
+  }
+
+  .carousel .carousel-item img {
+    animation: fadeVisibility 1s;
+  }
+
+  @keyframes fadeVisibility {
+    0% {
+      opacity: 0.25;
+    }
+    100% {
+      opacity: 1;
+    }
   }
 }
 
