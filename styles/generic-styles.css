@@ -301,15 +301,6 @@ nav .nav-content {
   top: 0;
 }
 
-@keyframes fadein {
-  from {
-    opacity: 0.1;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
 /* !! FOOTER COMPONENT */
 footer {
   position: absolute;

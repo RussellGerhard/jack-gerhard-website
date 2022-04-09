@@ -213,18 +213,6 @@ hr {
     margin: 8px;
   }
 
-  .carousel .carousel-item img {
-    animation: fadeVisibility 1s;
-  }
-
-  @keyframes fadeVisibility {
-    0% {
-      opacity: 0.25;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
 }
 
 /*
