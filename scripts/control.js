@@ -146,8 +146,7 @@ function handleNavLinkClick() {
     // Hide old page, scroll to top, show new page, update current page
     pages[current_page_index].classList.add('hidden');
     window.scrollTo(0, 0);
-    setTimeout(() => pages[this.i].classList.remove('hidden'), 1);
-    // setTimeout(() => pages[this.i].classList.remove('hidden'), 5);
+    pages[this.i].classList.remove('hidden');
     current_page_index = this.i;
 }
 

@@ -409,11 +409,6 @@ footer .content-wrapper .copyright {
     font-size: calc(1.125 * 1.125rem);
   }
 
-  /* Page load animation */
-  .site-page {
-    animation: fadeVisibility 1.25s;
-  }
-
   .logo-text {
     margin-right: 0;
   }
