@@ -167,11 +167,6 @@ hr {
     display: none;
   }
 
-  .show-content {
-    width: 400px;
-    height: 560px;
-  }
-
   .show-content .show-info {
     border: 3px solid var(--color-primary-dark);
     border-top-left-radius: min(100vw - 400px, var(--corner-radius));

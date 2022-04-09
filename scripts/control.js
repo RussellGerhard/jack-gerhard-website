@@ -17,8 +17,7 @@ const buddy_video = document.getElementById('buddy-holly');
 let autoplayed = false;
 
 // Decide how to treat video based on mobile or desktop layout
-let width = document.documentElement.clientWidth;
-const mq = window.matchMedia( '(min-width: 1024px)' );
+let mq = window.matchMedia( '(min-width: 1024px)' );
 
 
 // ********** PRODUCTION PAGE ELEMENTS **********

@@ -159,6 +159,7 @@ header {
   );
   overflow: hidden;
 
+  -webkit-transition: height 0.3 ease-in-out;
   transition: height 0.3s ease-in-out;
 }
 
@@ -241,6 +242,7 @@ nav .nav-content {
   width: 24px;
   position: relative;
   display: block;
+  -webkit-transition: background-color 300ms ease-out;
   transition: background-color 300ms ease-out;
 
   background-color: var(--color-primary-light);
@@ -253,6 +255,7 @@ nav .nav-content {
   width: 100%;
   display: block;
   position: absolute;
+  -webkit-transition: all 200ms ease-in;
   transition: all 200ms ease-in;
 
   background: var(--color-primary-light);
@@ -287,11 +290,13 @@ nav .nav-content {
 }
 
 .side-menu:checked ~ .hamb .hamb-line::before {
+  -webkit-transform: rotate(-45deg);
   transform: rotate(-45deg);
   top: 0;
 }
 
 .side-menu:checked ~ .hamb .hamb-line::after {
+  -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
   top: 0;
 }

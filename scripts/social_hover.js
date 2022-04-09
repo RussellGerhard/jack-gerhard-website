@@ -1,6 +1,5 @@
 // Decide how to treat social icons based on mobile or desktop layout
-let width = document.documentElement.clientWidth;
-const mq = window.matchMedia( '(min-width: 1024px)' );
+let mq2 = window.matchMedia( '(min-width: 1024px)' );
 
 // Get social icon
 const social_icons = document.getElementsByClassName('social');
@@ -22,6 +21,7 @@ function handleIconMouseLeave() {
 }
 
 // Listen for mouse enter and exit to change source image
+console.log(mq.matches);
 if (mq.matches) {
     for (let i = 0; i < 4; i++) {
         social_icons[i].i = i % 2;
