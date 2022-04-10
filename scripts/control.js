@@ -434,15 +434,12 @@ function disableSpaceBar(e) {
 
 // ********** NAV LISTENERS **********
 // Delay display on desktop until buddy video can be played
-document.addEventListener('DOMContentLoaded', () => {
-    if (mq.matches) {
-        buddy_video.addEventListener('canplay', () => {
-            document.body.classList.remove('hidden');
-        });
-    } else {
+if (mq.matches) {
+    document.body.classList.add('hidden');
+    buddy_video.addEventListener('canplay', () => {
         document.body.classList.remove('hidden');
-    };
-});
+    });
+}
 
 // Listen for hamburger click
 mobile_nav_checkbox_label.addEventListener('click', handleHambClick);
