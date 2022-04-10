@@ -12,6 +12,7 @@
 @media (min-width: 26em) {
     video#buddy-holly {
         width: 416px;
+        height: 522.297px;
         margin: 0 auto;
         border-radius: min(100vw - 416px, var(--corner-radius));
         box-shadow: 2px 2px 4px black;
