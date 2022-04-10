@@ -29,6 +29,7 @@ body {
   background-color: var(--color-primary-light);
   scrollbar-width: none;
 
+  /* Nonstandard way to remove mobile touch focus highlight */
   -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
@@ -161,6 +162,7 @@ header {
   );
   overflow: hidden;
 
+  will-change: height;
   transition: height 0.3s ease-in-out;
 }
 
@@ -236,10 +238,6 @@ nav .nav-content {
   cursor: pointer;
   float: right;
   padding: 16px;
-}
-
-.hamb:focus {
-  outline: none;
 }
 
 /* Generate middle line of hamburger icon, style transition to mobile nav*/
@@ -433,6 +431,7 @@ footer .content-wrapper .copyright {
     float: right;
     width: calc(100% - 176px);
     margin: 15.5px 0;
+    will-change: none;
 
     background-color: transparent;
     background-image: none;
