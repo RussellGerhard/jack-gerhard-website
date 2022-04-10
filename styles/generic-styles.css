@@ -233,7 +233,7 @@ nav .nav-content {
   position: relative;
   cursor: pointer;
   float: right;
-  padding: 11px 0;
+  padding: 16px;
 }
 
 /* Generate middle line of hamburger icon, style transition to mobile nav*/
@@ -241,7 +241,7 @@ nav .nav-content {
   height: 2px;
   width: 24px;
   position: absolute;
-  left: -22px;
+  left: 8px;
   display: block;
   background-color: var(--color-primary-light);
 }

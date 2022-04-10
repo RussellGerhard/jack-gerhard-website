@@ -433,10 +433,12 @@ function disableSpaceBar(e) {
 
 
 // ********** NAV LISTENERS **********
-// Delay display until content loaded
-window.addEventListener('load', () => {
-    document.body.classList.remove('hidden');
-});
+// Delay display on desktop until buddy video can be played
+if (mq.matches) {
+    buddy_video.addEventListener('canplay', () => {
+        document.body.classList.remove('hidden');
+    });
+};
 
 // Listen for hamburger click
 mobile_nav_checkbox_label.addEventListener('click', handleHambClick);
