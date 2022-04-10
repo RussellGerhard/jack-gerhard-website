@@ -439,9 +439,7 @@ if (mq.matches) {
         document.body.classList.remove('hidden');
     });
 } else {
-    document.addEventListener('DOMContentLoaded', () => {
-        document.body.classList.remove('hidden');
-    });
+    document.body.classList.remove('hidden');
 };
 
 // Listen for hamburger click
@@ -470,6 +468,7 @@ for (let i = 0; i < num_pages; i++) {
     });
 };
 
+
 // ********** HOME PAGE LISTENERS **********
 // Listen for desktop click
 buddy_video.addEventListener('click', handleVideoClick);
@@ -481,6 +480,7 @@ if (mq.matches) {
     handleMobileVideoViewIntersection();
 };
 
+
 // ********** PRODUCTION PAGE LISTENERS **********
 for (let i = 0; i < numberOfCarousels; i++){
     prevButtonList[i].i = i;
@@ -490,6 +490,7 @@ for (let i = 0; i < numberOfCarousels; i++){
     prevButtonList[i].addEventListener("click", handleMoveToPrevSlide);
     nextButtonList[i].addEventListener("click", handleMoveToNextSlide);
 };
+
 
 // ********** VIDEOS PAGE LISTENERS **********
 for (let i = 0; i < num_videos; i++) {
