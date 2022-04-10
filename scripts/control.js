@@ -438,6 +438,10 @@ if (mq.matches) {
     buddy_video.addEventListener('canplay', () => {
         document.body.classList.remove('hidden');
     });
+} else {
+    document.addEventListener('DOMContentLoaded', () => {
+        document.body.classList.remove('hidden');
+    });
 };
 
 // Listen for hamburger click
