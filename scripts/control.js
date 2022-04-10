@@ -460,8 +460,16 @@ for (let i = 0; i < num_pages; i++) {
     });
 };
 
+// ********** HOME PAGE LISTENERS **********
 // Listen for desktop click
 buddy_video.addEventListener('click', handleVideoClick);
+if (mq.matches) {
+    if (!autoplayed) {
+        autoplay();
+    }
+} else {
+    handleMobileVideoViewIntersection();
+};
 
 // ********** PRODUCTION PAGE LISTENERS **********
 for (let i = 0; i < numberOfCarousels; i++){
