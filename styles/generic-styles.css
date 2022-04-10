@@ -159,7 +159,6 @@ header {
   );
   overflow: hidden;
 
-  -webkit-transition: height 0.3 ease-in-out;
   transition: height 0.3s ease-in-out;
 }
 
@@ -231,6 +230,7 @@ nav .nav-content {
 
 /* Style hamburger element */
 .hamb {
+  position: relative;
   cursor: pointer;
   float: right;
   padding: 11px 0;
@@ -240,35 +240,26 @@ nav .nav-content {
 .hamb-line {
   height: 2px;
   width: 24px;
-  position: relative;
+  position: absolute;
+  left: -22px;
   display: block;
-  -webkit-transition: background-color 300ms ease-out;
-  transition: background-color 300ms ease-out;
-
   background-color: var(--color-primary-light);
 }
 
-/* Duplicate middle line above and below, style transition to mobile nav */
-.hamb-line::before,
-.hamb-line::after {
-  height: 100%;
-  width: 100%;
-  display: block;
-  position: absolute;
-  -webkit-transition: all 200ms ease-in;
-  transition: all 200ms ease-in;
-
-  background: var(--color-primary-light);
-  content: "";
+.hl--1 {
+  top: 10px;
+  transition: all 300ms ease-in;
 }
 
-/* Spacing */
-.hamb-line::before {
-  top: 8px;
+.hl--2 {
+  top: 18px;
+  opacity: 1;
+  transition: opacity 300ms ease-in;
 }
 
-.hamb-line::after {
-  top: -8px;
+.hl--3 {
+  top: 26px;
+  transition: all 300ms ease-in;
 }
 
 /* Toggling */
@@ -285,21 +276,18 @@ nav .nav-content {
 }
 
 /* Transitions for hamburger icon */
-.side-menu:checked ~ .hamb .hamb-line {
-  background-color: transparent;
+.side-menu:checked ~ .hamb .hl--1 {
+  transform: translateY(8px) rotate(45deg);
 }
 
-.side-menu:checked ~ .hamb .hamb-line::before {
-  -webkit-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-  top: 0;
+.side-menu:checked ~ .hamb .hl--2 {
+  opacity: 0;
 }
 
-.side-menu:checked ~ .hamb .hamb-line::after {
-  -webkit-transform: rotate(45deg);
-  transform: rotate(45deg);
-  top: 0;
+.side-menu:checked ~ .hamb .hl--3 {
+  transform: translateY(-8px) rotate(-45deg);
 }
+
 
 /* !! FOOTER COMPONENT */
 footer {
