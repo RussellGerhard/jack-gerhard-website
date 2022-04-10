@@ -433,15 +433,46 @@ function disableSpaceBar(e) {
 
 
 // ********** NAV LISTENERS **********
+
 // Listen for hamburger click
 mobile_nav_checkbox_label.addEventListener('click', handleHambClick);
 
 // Listen for navigation click
 for (let i = 0; i < num_pages; i++) {
     nav_links[i].i = i;
+    // Hide and show correct site pages within main ('hide' meaning display: none)
     nav_links[i].addEventListener('click', handleNavLinkClick);
+    // Main container gets set to opacity: 0.33 (NO transition)
+    nav_links[i].addEventListener('click', () => {
+        main.classList.add('fade');
+    });
+    // Main container get assigned a transition
+    // Said transition is used to scale to opacity: 1
+    nav_links[i].addEventListener('click', () => {
+        setTimeout(() => {
+            main.classList.add('transition');
+            main.classList.remove('fade');
+        }, 1); 
+    });
+    // Strip main of transition to rinse and repeat for next nav
+    nav_links[i].addEventListener('click', () => {
+        main.classList.remove('transition');
+    });
 };
 
+// Similar to nav but for initial content load and refreshes
+document.addEventListener('DOMContentLoaded', () => {
+    main.classList.add('fade');
+});
+document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+        main.classList.add('transition');
+        main.classList.remove('fade');
+    }, 1); 
+});
+document.addEventListener('DOMContentLoaded', () => {
+    main.classList.remove('transition');
+});
 
 // ********** HOME PAGE LISTENERS **********
 if (mq.matches) {

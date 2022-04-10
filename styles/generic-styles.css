@@ -403,12 +403,26 @@ footer .content-wrapper .copyright {
   }
 }
 
-/* Switch to desktop layout and header */
 @media (min-width: 59.875em) {
   body {
     font-size: calc(1.125 * 1.125rem);
   }
 
+  /* Give site page transitions for dynamic load feel */
+  #main.fade {
+    opacity: 0.33;
+  }
+
+  #main.transition {
+    transition-duration: 1.25s;
+    transition-property: opacity;
+  }
+
+  #main {
+    opacity: 1;
+  }
+
+  /* Switch to desktop layout and header */
   .logo-text {
     margin-right: 0;
   }
