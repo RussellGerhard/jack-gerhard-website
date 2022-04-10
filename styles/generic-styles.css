@@ -142,15 +142,10 @@ header {
 }
 
 /* !! MOBILE NAV COMPONENT */
-/*
-  I formatted and positioned this element, but the checkbox hack came from
-  https://blog.logrocket.com/create-responsive-mobile-menu-with-css-no-javascript/
-*/
-
 /* Fix nav and hide it with 0% height */
 .nav {
-  height: 0%;
   width: 100%;
+  height: 0%;
   position: fixed;
   top: 75px;
 
@@ -170,6 +165,7 @@ nav .nav-content {
   display: flex;
   flex-flow: column nowrap;
   width: 100%;
+  height: 83.33333%;
 }
 
 /* Style nav links */
@@ -275,12 +271,6 @@ nav .nav-content {
   /* 100% of viewport minus header height */
   /* Chrome specifies using 100% INSTEAD OF 100vh */
   height: calc(100% - 75px);
-}
-
-/* Give mobile nav links 5/6 of height */
-/* Remaining 1/6 is for social links flexbox */
-.side-menu:checked ~ .nav .nav-content {
-  height: 83.33333%;
 }
 
 /* Transitions for hamburger icon */

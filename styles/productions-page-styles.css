@@ -24,12 +24,6 @@ hr {
   margin-bottom: 4px;
 }
 
-/*
-  Used a basic tutorial from
-  https://dev.to/coderjay06/how-to-build-a-carousel-from-scratch-531c
-  with my own modifications
-*/
-
 /* Make sure later absolute positioning is relative to the carousel */
 .carousel {
   position: relative;
@@ -189,13 +183,6 @@ hr {
     border: 3px solid var(--color-primary-dark);
     border-bottom-left-radius: min(100vw - 400px, var(--corner-radius));
     border-bottom-right-radius: min(100vw - 400px, var(--corner-radius));
-  }
-}
-
-/* Add box-shadow a little late */
-@media (min-width: 25em) {
-  .show-content {
-    box-shadow: 2px 2px 4px black;
   }
 }
 
