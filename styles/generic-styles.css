@@ -248,17 +248,22 @@ nav .nav-content {
 
 .hl--1 {
   top: 10px;
+  -webkit-transition: transform 300ms ease-in;
+  -webkit-transition: -webkit-transform 300ms ease-in;
   transition: transform 300ms ease-in;
 }
 
 .hl--2 {
   top: 18px;
   opacity: 1;
+  -webkit-transition: opacity 300ms ease-in;
   transition: opacity 300ms ease-in;
 }
 
 .hl--3 {
   top: 26px;
+  -webkit-transition: transform 300ms ease-in;
+  -webkit-transition: -webkit-transform 300ms ease-in;
   transition: transform 300ms ease-in;
 }
 
