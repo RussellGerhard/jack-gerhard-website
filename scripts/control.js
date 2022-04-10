@@ -460,27 +460,6 @@ for (let i = 0; i < num_pages; i++) {
     });
 };
 
-// Similar to nav but for initial content load and refreshes
-document.addEventListener('DOMContentLoaded', () => {
-    main.classList.add('fade');
-});
-document.addEventListener('DOMContentLoaded', () => {
-    setTimeout(() => {
-        main.classList.add('transition');
-        main.classList.remove('fade');
-    }, 1); 
-});
-document.addEventListener('DOMContentLoaded', () => {
-    main.classList.remove('transition');
-});
-
-// ********** HOME PAGE LISTENERS **********
-if (mq.matches) {
-    autoplay();
-} else {
-    handleMobileVideoViewIntersection();
-}
-
 // Listen for desktop click
 buddy_video.addEventListener('click', handleVideoClick);
 
