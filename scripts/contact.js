@@ -28,10 +28,12 @@ form.onsubmit = (e) => {
     xhr.onloadend = (e) => {
         // Successful form submission
         if (e.target.status == 200) {
+            formResponse.innerText = 'Message sent!'
             formResponse.style.backgroundColor = '#70bb70';
             formResponse.style.opacity = 1;
             form.reset();
         } else { // Error
+            formResponse.innerText = 'Sorry, please resend!'
             formResponse.style.opacity = 1;
             formResponse.style.backgroundColor = '#d32f2f';
         }
