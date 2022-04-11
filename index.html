@@ -55,6 +55,7 @@
     />
     <!-- Scripts -->
     <script src="scripts/control.js" defer></script>
+    <script src="scripts/contact.js" defer></script>
     <script src="scripts/social_hover.js" defer></script>
     <!-- Favicon -->
     <link rel="icon" href="images/icons/jack_favicon.png" />
@@ -685,7 +686,7 @@
                 </address>
               </div>
               <div id="direct-contact" class="contact-wrapper display-text">
-                <form method="POST" action="/process">
+                <form id="contact-form" method="post">
                   <h2 class="text-center text-primary-dark">Actor Contact</h2>
                   <input
                     type="text"
@@ -711,7 +712,7 @@
                     maxlength="400"
                     required
                   ></textarea>
-                  <button type="submit">Send</button>
+                  <button id="contact-button" type="submit">Send</button>
                 </form>
               </div>
             </div>
