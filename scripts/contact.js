@@ -1,5 +1,5 @@
 const form = document.querySelector('form');
-const formURL = 'https://0l38s5jdgl.execute-api.us-east-1.amazonaws.com/contactForm';
+const formURL = 'https://0l38s5jdgl.execute-api.us-east-1.amazonaws.com/AmplifyCrossOrigin/contactForm';
 const submitButton = document.getElementById('contact-button');
 
 form.onsubmit = (e) => {
