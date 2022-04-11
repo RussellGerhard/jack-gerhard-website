@@ -15,6 +15,23 @@ address {
 }
 
 /* !! CONTACT FORM */
+#form-submission-response {
+  position: fixed;
+  top: 13px;
+  right: 13px;
+  opacity: 0;
+  width: 250px;
+  height: 50px;
+  padding: 16px;
+  transition: opacity 500ms;
+
+  font-size: 20px;
+  color: white;
+  background-color:  grey;
+  border-radius: 8px;
+  z-index: 2;
+}
+
 input {
   display: block;
   width: 100%;

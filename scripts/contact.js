@@ -1,4 +1,5 @@
 const form = document.querySelector('form');
+const formResponse = document.getElementById('form-submission-response');
 const formURL = 'https://0l38s5jdgl.execute-api.us-east-1.amazonaws.com/AmplifyCrossOrigin/contactForm';
 const submitButton = document.getElementById('contact-button');
 
@@ -27,21 +28,19 @@ form.onsubmit = (e) => {
     xhr.onloadend = (e) => {
         // Successful form submission
         if (e.target.status == 200) {
+            formResponse.style.backgroundColor = '#70bb70';
+            formResponse.style.opacity = 1;
             form.reset();
-            submitButton.style.backgroundColor = '#90ee90';
-            submitButton.style.color = '#198754';
-            submitButton.innerText = 'Message Sent!'
-        } else { // Error 
-            submitButton.style.backgroundColor = '#ffcccb';
-            submitButton.innerText = 'Message Failed. Please Try Again!'
+        } else { // Error
+            formResponse.style.opacity = 1;
+            formResponse.style.backgroundColor = '#d32f2f';
         }
 
         // 2 second wait to reset styles
         setTimeout(() => {
-            submitButton.style.backgroundColor = '#ccc';
-            submitButton.style.color = 'rgb(130, 10, 20);';
-            submitButton.innerText = 'Send';
-        }, 2000);
+            formResponse.style.opacity = 0;
+            console.log('hello');
+        }, 3000);
     }
 
 }
