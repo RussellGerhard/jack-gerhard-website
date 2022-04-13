@@ -28,11 +28,13 @@ form.onsubmit = (e) => {
     xhr.onloadend = (e) => {
         // Successful form submission
         if (e.target.status == 200) {
+            form.reset();
+            formResponse.style.zIndex = '2';
             formResponse.innerText = 'Message sent!'
             formResponse.style.backgroundColor = '#70bb70';
             formResponse.style.opacity = 1;
-            form.reset();
         } else { // Error
+            formResponse.style.zIndex = '2';
             formResponse.innerText = 'Sorry, please resend!'
             formResponse.style.opacity = 1;
             formResponse.style.backgroundColor = '#d32f2f';
@@ -40,6 +42,7 @@ form.onsubmit = (e) => {
 
         // 2 second wait to reset styles
         setTimeout(() => {
+            formResponse.style.zIndex = '-1';
             formResponse.style.opacity = 0;
             console.log('hello');
         }, 3000);
