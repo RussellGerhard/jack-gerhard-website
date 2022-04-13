@@ -40,12 +40,14 @@ form.onsubmit = (e) => {
             formResponse.style.backgroundColor = '#d32f2f';
         }
 
-        // 2 second wait to reset styles
+        // 2s delay to allow user time to read message
+        setTimeout(() => {
+            formResponse.style.opacity = 0;
+        }, 3000);
+        // 2.5s delay to give 500ms opacity transition time to end
         setTimeout(() => {
             formResponse.style.zIndex = '-1';
-            formResponse.style.opacity = 0;
-            console.log('hello');
-        }, 3000);
+        }, 3500);
     }
 
 }

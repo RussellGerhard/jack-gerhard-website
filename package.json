@@ -1,0 +1,21 @@
+{
+  "name": "local-minifier",
+  "version": "1.0.0",
+  "description": "A local environment to minify CSS, JS, and HTML files",
+  "licence": "Apache-2.0",
+  "author": "Russell Gerhard",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RussellGerhard/jack-gerhard-website"
+  },
+  "devDependencies": {
+    "del": "^6.0.0",
+    "gulp": "^4.0.0"
+  },
+  "engines": {
+    "node": ">=0.12.0"
+  },
+  "dependencies": {
+    "gulp-cli": "^2.3.0"
+  }
+}
