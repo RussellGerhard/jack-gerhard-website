@@ -43,8 +43,8 @@ gulp.task('min-js', function() {
     .pipe(gulp.dest('./assets/scripts/'))
 });
 
-// Clean output directory
-gulp.task('clean', () => del(['assets']) );
+// Remove output of last gulp command
+gulp.task('clean', () => del(['assets/scripts', 'assets/index.html', 'assets/styles.css']) );
 
 // Gulp default runs all tasks
 gulp.task('default', gulp.series('clean', 'min-html', 'prefix-min-css', 'min-js'));
