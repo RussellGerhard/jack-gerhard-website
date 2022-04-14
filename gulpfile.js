@@ -12,13 +12,13 @@ var uglify_es = require('gulp-uglify-es').default;
 
 // Deal with HTML files
 gulp.task('min-html', function() {
-    return gulp.src('./index.html')
+    return gulp.src('./html/homepage.html')
     // Minify files
     .pipe(htmlmin({
         collapseWhitespace: true,
         removeComments: true
     }))
-    .pipe(gulp.dest('./assets'));
+    .pipe(gulp.dest('./'));
 })
 
 // Deal with CSS files
@@ -31,7 +31,7 @@ gulp.task('prefix-min-css', function() {
         // Concatenate the files
         .pipe(concat('styles.css'))
         // Output
-        .pipe(gulp.dest('./assets'))
+        .pipe(gulp.dest('./'))
 });
 
 // Deal with JS files
@@ -40,11 +40,11 @@ gulp.task('min-js', function() {
     // Minify files
     .pipe(uglify_es())
     // Output
-    .pipe(gulp.dest('./assets/scripts/'))
+    .pipe(gulp.dest('./scripts/'))
 });
 
 // Remove output of last gulp command
-gulp.task('clean', () => del(['assets/scripts', 'assets/index.html', 'assets/styles.css']) );
+gulp.task('clean', () => del(['./scripts', './index.html', './styles.css']) );
 
 // Gulp default runs all tasks
 gulp.task('default', gulp.series('clean', 'min-html', 'prefix-min-css', 'min-js'));
