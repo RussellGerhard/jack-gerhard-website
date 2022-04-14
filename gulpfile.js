@@ -1,5 +1,6 @@
 'use strict';
 
+// Must run 'Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass' in cmd to execute gulp command
 // Packages that were required in package.json
 var autoprefixer = require('gulp-autoprefixer');
 var concat = require('gulp-concat');
