@@ -1,68 +1,49 @@
 'use strict';
 
 // Packages that were required in package.json
+var autoprefixer = require('gulp-autoprefixer');
+var concat = require('gulp-concat');
+var csso = require('gulp-csso');
 var del = require('del');
 var gulp = require('gulp');
-// var autoprefixer = require('gulp-autoprefixer');
-// var csso = require('gulp-csso');
-// var htmlmin = require('gulp-htmlmin');
-// var uglify = require('gulp-uglify');
-// var runSequence = require('run-sequence');
-
-
-// Declare supported browsers for prefixing styles
-// Ex. prefixing -webkit- for chrome
-// const AUTOPREFIXER_BROWSERS = [
-//     'ie >= 10',
-//     'ie_mob >= 10',
-//     'ff >= 30',
-//     'chrome >= 34',
-//     'safari >= 7',
-//     'opera >= 23',
-//     'ios >= 7',
-//     'android >= 4.4',
-//     'bb >= 10'
-//   ];
-
-// Deal with CSS files
-// gulp.task('styles', function() {
-//     return gulp.src('./styles/*.css')
-//         // Auto-prefix css styles for cross browser compatability
-//         .pipe(autoprefixer({browsers: AUTOPREFIXER_BROWSERS}))
-//         // Minify the file
-//         .pipe(csso())
-//         // Output
-//         .pipe(gulp.dest('./assets/css'))
-// });
-
-// Deal with JS files
-// gulp.task('scripts', function() {
-//     return gulp.src('./scripts/*.js')
-//     // Minify files
-//     .pipe(uglify())
-//     // Output
-//     .pipe(gulp.dest('./assets/js/'))
-// });
+var htmlmin = require('gulp-htmlmin');
+var uglify_es = require('gulp-uglify-es').default;
 
 // Deal with HTML files
-// gulp.task('pages', function() {
-//     return gulp.src('./index.html')
-//     // Minify files
-//     .pipe(htmlmin({
-//         collapseWhitespace: true,
-//         removeComments: true
-//     }))
-//     .pipe(gulp.dest('./assets'));
-// })
+gulp.task('min-html', function() {
+    return gulp.src('./index.html')
+    // Minify files
+    .pipe(htmlmin({
+        collapseWhitespace: true,
+        removeComments: true
+    }))
+    .pipe(gulp.dest('./assets'));
+})
+
+// Deal with CSS files
+gulp.task('prefix-min-css', function() {
+    return gulp.src('./css/*.css')
+        // Auto-prefix css styles for cross browser compatability
+        .pipe(autoprefixer())
+        // Minify the files
+        .pipe(csso())
+        // Concatenate the files
+        .pipe(concat('styles.css'))
+        // Output
+        .pipe(gulp.dest('./assets'))
+});
+
+// Deal with JS files
+gulp.task('min-js', function() {
+    return gulp.src('./js/*.js')
+    // Minify files
+    .pipe(uglify_es())
+    // Output
+    .pipe(gulp.dest('./assets/scripts/'))
+});
 
 // Clean output directory
-gulp.task('default', () => del(['assets']) );
+gulp.task('clean', () => del(['assets']) );
 
 // Gulp default runs all tasks
-// gulp.task('default', ['clean'], function () {
-//     runSequence(
-//         'styles',
-//         'scripts',
-//         'pages'
-//     );
-// });
+gulp.task('default', gulp.series('clean', 'min-html', 'prefix-min-css', 'min-js'));
