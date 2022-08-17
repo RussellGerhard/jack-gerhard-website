@@ -1,8 +1,8 @@
 const form = document.querySelector("form"),
   formResponse = document.getElementById("form-submission-response"),
   formURL =
-    "https://0l38s5jdgl.execute-api.us-east-1.amazonaws.com/AmplifyCrossOrigin/JackMailNode16Update",
-  submitButton = document.getElementById("contact-button");
+    "https://0l38s5jdgl.execute-api.us-east-1.amazonaws.com/AmplifyCrossOrigin/JackMailNode16Update";
+submitButton = document.getElementById("contact-button");
 form.onsubmit = (e) => {
   e.preventDefault();
   let o = {};
